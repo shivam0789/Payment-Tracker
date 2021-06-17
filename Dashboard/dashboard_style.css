@@ -7,11 +7,12 @@ body {
   }
   
   .sidebar {
+    display: inline-block;
     height: 100%;
-    /* width: 0; */
-    position: fixed;
+    width: 250px;
+    position: relative;
     z-index: 1;
-    top: 0;
+    top: -69px;
     left: 0;
     background-color: #111;
     /* overflow-x: hidden; */
