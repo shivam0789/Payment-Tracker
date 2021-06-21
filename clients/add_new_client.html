@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clients : Add New Client</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="addClientPage">
+        <div class="addClientPageHeader">
+          <span>Add new client</span> <span>|</span
+          ><span>Edit added Client</span>
+        </div>
+        <div class="addClientPageBody">
+          <form action="">
+            <div>
+              <label for="name">Name : </label>
+              <input type="text" placeholder="Enter Your Name" required />
+            </div>
+            <div>
+              <label for="emailId">Email Id :</label>
+              <input type="text" placeholder="Enter Your Email Id" required />
+            </div>
+            <div>
+              <label for="address">Address</label>
+              <input type="text" placeholder="Enter Your Address" required />
+            </div>
+            <div>
+              <label for="clientType">Client Type:</label>
+              <select name="clientType" id="clientType" required>
+                <option value="influencer">influencer</option>
+                <option value="advertiser">advertiser</option>
+                <option value="publisher">publisher</option>
+                <option value="follower">follower</option>
+                <option value="marketers">marketers</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="mobileNo.">Mobile No.</label>
+              <input
+                type="number"
+                placeholder="Enter Your Mobile Number"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="pvcDetails">PVC details</label>
+              <input
+                type="text"
+                placeholder="Enter Your PVC details"
+                required
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
