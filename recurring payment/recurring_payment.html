@@ -5,35 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment Tracker : Recurring Payment</title>
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
   </head>
   <style>
-      *{
-          margin: 0;padding: 0;box-sizing: border-box;
-      }
-      .container{
-          
-      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      position: relative;
+      left: 250px;
+      top: 0;
+      border: 1px solid black;
+      background-color: #f2f2f2;
+      width: 80%;
+      height: 100vh;
+    }
+    .header {
+      border-bottom: 1px solid black;
+    }
+    .header .headingOfRP {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .container .header .rightPartHeader {
+      position: relative;
+      right: -51vw;
+      top: 0;
+    }
+    .topOfBody {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .paymentTable{
+      overflow: scroll;
+    }
+    .paymentTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.paymentTable td, .paymentTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.paymentTable tr:nth-child(even){background-color: #fff;}
+
+.paymentTable tr:hover {background-color: #ddd;}
+
+.paymentTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
   </style>
   <body>
     <div class="container">
       <div class="header">
         <span class="headingOfRP">Recurring Payment</span>
-        <span class="userId"><i class="las la-user-circle"></i>user Id</span>
-        <span>YoursBiz</span>
-        <span>logo</span>
+        <span class="rightPartHeader">
+          <span class="userId"><i class="las la-user-circle"></i>user Id</span>
+          <span>YoursBiz</span>
+          <span>logo</span>
+        </span>
       </div>
-      <div>
-        <button>Add Reccuring Payment</button>
-        <button>View Draft Invoice</button>
-        <input type="text" placeholder="Search" />
-        <div class="topfilter"><i class="las la-search"></i>
-          <select name="filter" id="filter">
-            <option value="filter">filter</option>
-            <option value="filter">by name</option>
-            <option value="filter">by date</option>
-            <option value="filter">by amount</option>
-          </select>
+      <div class="topOfBody">
+        <div>
+          <button>Add Reccuring Payment</button>
+          <button>View Draft Invoice</button>
+        </div>
+        <div style="display: flex; flex-flow: row; justify-content: space-between;">
+          <input type="text" placeholder="Search" />
+          <div class="topfilter">
+            <i class="las la-search"></i>
+            <select name="filter" id="filter">
+              <option value="filter">filter</option>
+              <option value="filter">by name</option>
+              <option value="filter">by date</option>
+              <option value="filter">by amount</option>
+            </select>
+          </div>
         </div>
       </div>
       <div class="paymentTable">
