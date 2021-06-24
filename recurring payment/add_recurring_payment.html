@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recurring Payment : Add Recurring Payment</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span>Add Recurring Payment</span>
+            <span class="rightPartHeader">
+                <span class="userId"><i class="las la-user-circle"></i>user Id</span>
+                <span>YoursBiz</span>
+                <span>logo</span>
+              </span>
+        </div>
+        <div class="payment-details">
+            <h1>Payment Details</h1>
+            <div class="payment-details-body">
+                <div>
+                    <label for="clientsName">Clients Name</label>
+                    <input type="text" id="clientsName" placeholder="Enter Client Name">
+
+                    <label for="recurringInvoiceNo.">Recurring Invoice No.</label>
+                    <input type="number" id="recurringInvoiceNo." placeholder="Enter Client Name">
+
+                    <label for="discount">Discount %
+                    </label>
+                    <input type="number" id="discount" placeholder="Enter Client Name">
+
+                    <label for="active">Active
+                    </label>
+                    <input type="checkbox" id="active" placeholder="Enter Client Name">
+                </div>
+            </div>
+        </div>
+        <div class="recurring-payment-setup">
+            <h1>Recurring Payment Setup</h1>
+            <div class="recurring-payment-setup-body">
+                <label for="startDate">Start Date</label>
+                <input type="date">
+
+                <label for="frequency">Frequency</label>
+                <select name="frequency" id="frequency">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                </select>
+
+                <label for="endDate">End Date</label>
+                <input type="date">
+
+                <label for="dueDateForPayment">Due Date For Payment</label>
+                <input type="number">
+
+                <label for="email">Email</label>
+                <input type="email" placeholder="xyz@gmail.com">
+
+                <label for="action">Action</label>
+                <select name="action" id="action">
+                    <option value="asDraft">As Draft</option>
+                    <option value="print">Print</option>
+                    <option value="mail">As Draft</option>
+                </select>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
