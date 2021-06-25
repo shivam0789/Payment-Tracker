@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<style>
+*{
+    margin: 0;padding: 0;
+}
+body {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  position: relative;
+      height: 100vh;
+    width: 80vw;
+    left: 250px;
+  border: 1px solid red;
+  alignment-baseline: right;
+}
+.tableFixHead {
+        overflow-y: auto;
+        height: 200px;
+      }
+      .tableFixHead thead th {
+        position: sticky;
+        top: 0;
+      }
+      table {
+        border-collapse: collapse;
+        width: 60%;
+      }
+      th,
+      td {
+        padding: 8px 16px;
+        border: 1px solid blue;
+      }
+      th {
+        background: #eee;
+      }
+</style>
+</head>
+<body>
+  <br></br>
+  <br></br>
+  <br>  </br>
+  <center>
+  <div class="column">
+<div class="column center">
+ <a style="font-weight: bolder;"> Overdue:
+  <input type="number" style="border: 2px solid blue;" id="" name="" value="123"> </a>
+</div>
+<br> </br>
+<div class="column right" style="">
+<a style="font-weight: bolder;"> Not Deposit:
+  <input type="number" style="border: 2px solid blue;" id="" name="" value="456"> </a>
+</div>
+</center>
+</div>
+<br> </br>
+<center>
+<div class="row">
+ <div class="col" style="font-weight: bolder;">
+    Group by:
+  <select  style="border: 2px solid blue;" name="" id="">
+    <option value="">Name</option>
+    <option value="">-</option>
+    <option value="">-</option>
+    <option value="">-</option>
+  </select> 
+</div>
+<div  class ="col"> <button style="font-weight: bolder; font-color:blue; border: 2px solid red;"> RUN REPORT 
+</button> 
+</div>
+<div class="col">  <select style="border: 2px solid blue;" name="cars" id="cars">
+    <option value="">New Invoice</option>
+    <option value="">-</option>
+    <option value="">-</option>
+    <option value="">-</option>
+  </select> 
+</div>
+</div>
+</center>
+<br> </br>
+<center>
+<div class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <th>Invoice</th>
+            <th>Clients/Projects</th>
+            <th>Date</th>
+            <th>Due Date</th>
+            <th>Balance</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.1</td>
+            <td>2.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+          </tr>
+          <tr>
+            <td>1.2</td>
+            <td>2.2</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+          </tr>
+          <tr>
+            <td>1.3</td>
+            <td>2.3</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+          </tr>
+          <tr>
+            <td>1.4</td>
+            <td>2.4</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+          </tr>
+          <tr>
+            <td>1.5</td>
+            <td>2.5</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+            <td>1.1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</center>
+</body>
+</html>
