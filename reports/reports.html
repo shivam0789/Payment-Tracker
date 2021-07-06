@@ -63,7 +63,6 @@
         color: #dce1e9;
         position: relative;
         margin-bottom: 1px;
-        text-align: center;
         text-transform: uppercase;
       }
       .wrapper .sidebar-menu li a .icon {
@@ -155,6 +154,18 @@
         visibility: hidden;
         transition: all 0.3s ease;
       }
+      .main-container .reports-content{
+        width: calc(100% - 250px);
+        position: relative;
+        right: 0;
+        top: -24px;
+        left: 250px;
+      }
+      /* css for the reports-main-content */
+      .main-container .reports-content .reports-main-content{
+        display: flex;
+
+      }
       @media screen and (max-width: 800px) {
         .wrapper .sidebar .sidebar-inner{
           left: -100%;
@@ -179,6 +190,14 @@
         }
         .wrapper .sidebar .sidebar-inner .sidebar-heading{
           font-size: 0.85rem;
+      }
+      .main-container .reports-content{
+        /* width: calc(100%,-250px); */
+        position: relative;
+        right: 0;
+        top: 0px;
+        left: 0px;
+        /* border: 1px solid red; */
       }
       }
     </style>
@@ -232,7 +251,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.google.com/">
+                  <a href="#">
                     <div class="icon"><i class="fas fa-file-invoice"></i></div>
                     <div class="title">Credit Notes</div>
                   </a>
@@ -255,6 +274,24 @@
             </div>
           </div>
         </div>
+        <div class="reports-content">
+          <div class="reports-heading">
+            <h3>Reports</h3>
+          </div>
+          <div class="reports-main-content">
+            <div class="received-payment-graph">
+              <h3>Total Received Amount</h3>
+              <h5>last 2 months</h5>
+              <canvas id="receivedAmountGraph" aria-label="chart" role="img" ></canvas>
+            </div>
+            <div class="received-overdue-table">
+
+            </div>
+            <div class="invoice-payment-graph">
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script>
@@ -270,6 +307,24 @@
       closeBtn.addEventListener("click",function(){
         let wrapper = document.querySelector(".wrapper");
        wrapper.classList.remove("active");
+      })
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("receivedAmountGraph").getContext("2d");
+      var myTimelineChart = new Chart(ctx,{
+        type : "pie",
+        data:{
+          labels:["Company Saving A/C-1","Company Saving A/C-2","Checking A/C","Payroll A/C"],
+          datasets:[
+            {
+              data:[12,12,25,34],
+              backgroundColor:[" #633EBB","#BE61CA","#F2BC5E","#F13C59"],
+              borderColor:"black",
+              borderWidth:1,
+            },
+          ]
+        },
       })
     </script>
   </body>
