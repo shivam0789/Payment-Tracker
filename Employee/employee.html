@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Employee</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<style>
+*{
+    margin: 0;padding: 0;
+    overflow: hidden;
+}
+body {
+   display: inline-block;
+  font-family: "Lato", sans-serif;
+   position: relative;
+      height: 100vh;
+    width: 80vw;
+    left: 252px;
+    top: 0;
+/*  border: 1px solid red; */
+}
+.btn{
+border: 1px solid blue;
+padding: 6px;
+font-size: 18px;
+background-color: whitesmoke;
+border-radius: 10px;
+cursor: pointer;
+}
+.btn:hover{
+    padding: 8px;
+    font-size: 20px;
+    background: lightskyblue;
+}
+.tableFixHead {
+        overflow-y: auto;
+        overflow-x: auto;
+        height: 250px;
+    -webkit-overflow-scrolling: touch;
+    word-wrap: break-word;
+  white-space: nowrap;  
+      }
+      .tableFixHead thead th {
+        position: sticky;
+        top: 0;
+      }
+      table {
+        border-collapse: collapse;
+        width: 40%;
+      }
+      th,
+      td {
+        padding: 8px 16px;
+        border: 1px solid blue;
+      }
+      th {
+        background: #eee;
+      }
+      center {
+    display: block;
+    text-align: -webkit-center;
+}
+
+
+#addServiceTable tr:nth-child(even){background-color: #fff;}
+#addServiceTable tr:hover {background-color: #ddd;}
+#addServiceTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: lightskyblue;
+  color: white;
+}
+</style>
+</head>
+<body>
+    <br> </br>
+    <a href="addeditemployee_employee.html" style="font-weight: bolder;font-size: 30px;">  Add Employee
+    </a>
+    <p> Payment Table- </p>
+  <div class="tableFixHead">
+      <table id="addServiceTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th> Mail Id</th>
+            <th>Mobile No.</th>
+            <th>Salary</th>
+            <th>Incentives</th>
+            <th>Other</th>
+            <th>Payment Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> Jagdish Kumar</td>
+            <td> Manager</td>
+            <td>jkumar19@gmail.com</td>
+            <td>99999999999</td>
+            <td>55000</td>
+            <td>15000</td>
+            <td>-/-</td>
+            <td>15/06/2021</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+             <td> ABC</td>
+            <td> ABC</td>
+            <td>ABC@gmail.com</td>
+            <td>99999999999</td>
+            <td>00000</td>
+            <td>00000</td>
+            <td>-/-</td>
+            <td>18/06/2021</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+              <td> ABC</td>
+            <td> ABC</td>
+            <td>ABC@gmail.com</td>
+            <td>99999999999</td>
+            <td>00000</td>
+            <td>00000</td>
+            <td>-/-</td>
+            <td>18/06/2021</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td> ABC</td>
+            <td> ABC</td>
+            <td>ABC@gmail.com</td>
+            <td>99999999999</td>
+            <td>00000</td>
+            <td>00000</td>
+            <td>-/-</td>
+            <td>18/06/2021</td>
+            <td>Completed</td>
+        </tr>
+        <tr>
+            <td> ABC</td>
+            <td> ABC</td>
+            <td>ABC@gmail.com</td>
+            <td>99999999999</td>
+            <td>00000</td>
+            <td>00000</td>
+            <td>-/-</td>
+            <td>18/06/2021</td>
+            <td>Completed</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <br> </br>
+    <div class="row">
+ <div class="col" >
+    <a style="color: blue; font-weight: bolder;">Total Monthly Payable Amount:</a> Rs.XXXXX  
+</div>
+<div  class ="col"> 
+</div>
+<div class="col"> 
+  <!-- <select style="border: 2px solid blue;" name="cars" id="cars">
+    <option value="">New Invoice</option>
+    <option value="">-</option>
+    <option value="">-</option>
+    <option value="">-</option>
+  </select> -->
+</div>
+</div>
+
+</body>
+</html>
