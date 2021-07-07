@@ -66,8 +66,8 @@
         text-transform: uppercase;
       }
       .wrapper .sidebar-menu li a .icon {
-        font-size: 32px;
-        margin: 0px 5px 5px 0px;
+        font-size: 2rem;
+        margin: 0px 5px 25px 0px;
         display: inline-block;
       }
       .wrapper .sidebar-menu li a .title{
@@ -161,28 +161,114 @@
         top: -24px;
         left: 250px;
       }
-/* css for the reports-main-content */
+  /* css for the reports-main-content */
       .main-container .reports-content .reports-main-content{
         display: flex;
-
+        flex-flow: column wrap;
+      }
+      .reports-heading{
+        border: 1px solid white;
+        border-radius: 5px;
+        background-color: white;
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin: 2px;
+      }
+      .main-content-top-part{
+        display: flex;
+        /* flex-flow: row; */
+        flex-wrap: wrap;
+        /* justify-content: ; */
+        margin: 10px 0px 10px 0px;
+      }
+      /* css code for the received payment graph */
+      .received-payment-graph{
+        border: 1px solid white;
+        background-color: #ffffff;
+        margin: 5px;
+        border-radius: 10px;
+        height: 330px;
+        width: 275px;
+      }
+      .received-payment-graph h3, .received-payment-graph h5{
+        text-align: center;
+        letter-spacing: 0.75px;
+      }
+      .invoice-payment-graph{
+       border: 1px solid white;
+        background-color: #ffffff;
+        margin: 5px;
+        border-radius: 10px;
       }
 
+/* css for the receive overdue section */
+.received-overdue-table{
+  border: 1px solid white;
+  border-radius: 10px;
+        background-color: #ffffff;
+        margin: 5px;     
+        padding: 3px;
+}
       /* css code for the receivabbles and overdue bar */
-      .receivabbles-overdue-bar{
+      .receivabbles-overdue-bar, .receivabbles-overdue-tab{
         display: flex;
         height: 40px;
         box-sizing: border-box;
         width: calc(100vw - 570px);
-        border: 1px solid red;
+        border: 1px solid rgb(236, 198, 198);
         justify-content: left;
       }
       .receivabbles-overdue-bar .receivabbles{
-        background: chartreuse;
-        width: 30%;
+        background: chartreuse;    
       }
       .receivabbles-overdue-bar .overdue{
         background: blue;
-        width: 70%;
+      }
+      .receivabbles-overdue-bar .receivabbles span,  .receivabbles-overdue-bar .overdue span{
+        font-size: 1.25rem;
+        font-weight: 550;
+      }
+
+      /* css code for the receivabbles and overdue tab */
+      .receivabbles-overdue-tab .receivabbles-tab{
+        width: 50%;  
+        border-right: 1px solid rgb(236, 198, 198); 
+        text-align: center;
+      }
+      .receivabbles-overdue-tab .overdue-tab{
+        width: 50%;
+        text-align: center;
+      }
+      .overdue-tab:hover, .receivabbles-tab:hover{
+        background-color: #c7c1c1;
+        font-size: 1.25rem;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+        /* css code for the main table */
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+/* css code for the overdue table body__to make tab */
+      .overdue-table-body{
+        display: none;
       }
       @media screen and (max-width: 800px) {
         .wrapper .sidebar .sidebar-inner{
@@ -297,6 +383,7 @@
             <h3>Reports</h3>
           </div>
           <div class="reports-main-content">
+            <div class="main-content-top-part">
             <div class="received-payment-graph">
               <h3>Total Received Amount</h3>
               <h5>last 2 months</h5>
@@ -311,10 +398,122 @@
                   <span>Rs. 700 </span>
                 </div>
               </div>
-
+              <div class="receivabbles-overdue-tab">
+                <div class="receivabbles-tab">
+                  <span>Receivabbles</span>
+                </div>
+                <div class="overdue-tab">
+                  <span>Overdue</span>
+                </div>
+              </div>
+              <div class="received-table-body">
+                <table>
+                  <tr>
+                    <th>Invoice Id</th>
+                    <th>Client</th>
+                    <th>Amount</th>
+                    <th>Date Generated</th>
+                    <th>Due Date</th>
+                    <th>Action</th>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>1/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send Reminders</td>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>1/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send Reminders</td>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>1/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send Reminders</td>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>1/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send Reminders</td>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>1/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send Reminders</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="overdue-table-body">
+                <table>
+                  <tr>
+                    <th>Invoice Id</th>
+                    <th>Client</th>
+                    <th>Amount</th>
+                    <th>Date Generated</th>
+                    <th>Due Date</th>
+                    <th>Action</th>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>02/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send Reminders</td>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>02/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send Reminders</td>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>02/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send warning</td>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>02/05/21</td>
+                    <td>02/06/21</td>
+                    <td>print</td>
+                  </tr>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>ABCD</td>
+                    <td>5000</td>
+                    <td>1/05/21</td>
+                    <td>02/06/21</td>
+                    <td>Send notification</td>
+                  </tr>
+                </table>
+              </div>
             </div>
-            <div class="invoice-payment-graph">
-
+          </div>
+            <div class="invoice-payment-graph" >
+              <canvas id="invoicePaymentGraph" aria-label="chart" role="img" ></canvas>
             </div>
           </div>
         </div>
@@ -323,8 +522,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
     <script>
       // this is the js code for making making payment received pie graph
-      var ctx = document.getElementById("receivedAmountGraph").getContext("2d");
-      var myTimelineChart = new Chart(ctx,{
+      const pieCtx = document.getElementById("receivedAmountGraph").getContext("2d");
+      const receivedAmountGraph = new Chart(pieCtx,{
         type : "pie",
         data:{
           labels:["Company Saving A/C-1","Company Saving A/C-2","Checking A/C","Payroll A/C"],
@@ -338,13 +537,61 @@
           ]
         },
       })
+
+      // this code for making bar graph between two values - invoice generated and payment received
+      const ctx = document.getElementById("invoicePaymentGraph").getContext("2d");
+      const invoicePaymentGraph = new Chart(ctx,{
+        type : "bar",
+        data:{
+          labels:["NOV 2020","DEC 2020","JAN 2021","FEB 2021","MAR 2021","APR 2021","MAY 2021","JUN 2021","JUL 2021","AUG 2021","SEP 2021","OCT 2021",],
+          datasets:[
+            {
+              data:[15000,17000,13000,14000,35000,24000,25000,25000,24000,32000,24000,25000],
+              label:"Invoice Generated",
+              backgroundColor:"yellow",
+              borderColor:"black",
+              borderWidth:1,
+            },
+            {
+              data:[12000,12000,30000,40000,25000,23000,34000,9000,12000,15000,18000,14000],
+              label:"Payment Received",
+              backgroundColor:"red",
+              borderColor:"black",
+              borderWidth:1,
+            },
+          ]
+        },
+        options:{
+          responsive:true,
+          layout:{
+            padding:{
+              left:10,
+              right:10,
+              top:10,
+              bottom:10,
+            },
+          },
+      plugins:{
+          title:{
+            display: true,
+            text: "Invoice Generated and Payment Received Graph",
+            position: "top",
+            font:{
+              size:20,
+              weight:"bold",
+            }
+            
+          },
+        }
+      },
+      })
+
     </script>
     <script>
       // this is the js code for making side-bar menu responsive
       let humberger = document.querySelector(".hamburger .fas");
       let closeBtn = document.querySelector(".close");
       
-
       humberger.addEventListener("click", function(){
         let wrapper = document.querySelector(".wrapper");
         wrapper.classList.add("active");
@@ -378,9 +625,21 @@
       receive.innerHTML = `<span>Rs. ${receivedAmount} </span>`;
       overdue.innerHTML = `<span>Rs. ${overdueAmount} </span>`;
 
+      // this js code is for making tab in recevabbles and overdue table
+      const receiveTab = document.querySelector(".receivabbles-tab");
+      const overdueTab = document.querySelector(".overdue-tab");
 
+      const receiveTable = document.querySelector(".received-table-body");
+      const overdueTable = document.querySelector(".overdue-table-body");
 
-
+      receiveTab.addEventListener("click", function(){
+        overdueTable.style.display = "none";
+        receiveTable.style.display = "flex";
+      })
+      overdueTab.addEventListener("click", function(){
+        receiveTable.style.display = "none";
+        overdueTable.style.display ="flex";
+      })
     </script>
   </body>
 </html>
