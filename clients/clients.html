@@ -4,44 +4,217 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payment Tracker - Clients</title>
-    <link rel="stylesheet" href="clients_style.css" />
+    <title>Payment CRM : Timeline</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
     />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
       * {
+        list-style: none;
+        text-decoration: none;
+        font-family: "Noto Sans JP", sans-serif;
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+        /* overflow: scroll; */
       }
-      /* styling for the client container */
-      .mainClientContainer {
-        display: inline-block;
-        height: 100vh;
-        width: 80vw;
+      body {
+        background: #bbc7df;
+      }
+      .wrapper {
+        display: flex;
+        width: 100%;
+      }
+      .wrapper .sidebar {
         position: relative;
-        left: 250px;
+      }
+      .wrapper .sidebar .sidebar-inner {
+        width: 250px;
+        position: fixed;
         top: 0;
-        border: 1px solid red;
+        left: 0;
+        height: 100%;
+        background: #2a58ae;
+        z-index: 99;
+        transition: all 0.3s ease;
+      }
+      .wrapper .sidebar .sidebar-inner .sidebar-heading{
+        color: #fff;
+        /* font-size: 0.85rem; */
+      }
+      .wrapper .main-container {
+        margin-left: 250px;
+        width: calc(100%, -250px);
+        transition: all 0.3s ease;
+      }
+      .wrapper .sidebar-menu li a {
+        padding: 10px 10px 10px 20px;
+        display: block;
+        height: 58px;
+        color: #dce1e9;
+        position: relative;
+        margin-bottom: 1px;
+        /* text-align: center; */
+        text-transform: uppercase;
+      }
+      .wrapper .sidebar-menu li a .icon {
+        font-size: 32px;
+        margin: 0px 5px 5px 0px;
+        display: inline-block;
+      }
+      .wrapper .sidebar-menu li a .title{
+        display: inline-block;
+      }
+      .wrapper .sidebar-menu li a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: #1fafac;
+        display: none;
+      }
+      .wrapper .sidebar-menu li a:hover,
+      .wrapper .sidebar-menu li a:active {
+        background: #1d4c9e;
+        color: #fff;
+      }
+      .wrapper .sidebar-menu li a:hover::before {
+        display: block;
+      }
+      .wrapper .main-container .top-navbar {
+        width: calc(100% - 250px);
+        height: 60px;
+        background: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 25px;
+        position: fixed;
+        top: 0;
+        left: 250px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125);
+        transition: all 0.3s ease;
+        /* display: none; */
+      }
+      .wrapper .main-container .top-navbar .hamburger {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        /* font-size: 30px; */
+        margin-left:5px;
+        display: none;
+        
+      }
+      .wrapper .main-container .top-navbar .hamburger .fas {
+        color: #88a3d0;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        clear: left;
+        transform: translate(-50%, -50%);
+      }
+      .wrapper .main-container .top-navbar .hamburger .fas:hover {
+        opacity: 0.5;
+      }
+      .wrapper .close {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 25px;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+      }
+      .wrapper .close:hover {
+        opacity: 0.5;
+      }
+      .wrapper .main-container .container {
+        padding: 30px;
+        margin-top: 60px;
+      }
+      .wrapper .bg-shadow{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #000;
+        z-index: 98;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      /* css for the main content*/
+
+      /* css for the heading */
+      .main-container .clients-content{
+        width: calc(100% - 250px);
+        position: relative;
+        right: 0;
+        top: -24px;
+        left: 250px;
       }
       /* styling for the search bar */
-      .searchBar {
-        position: relative;
-        top: 2px;
-        left: 2px;
-      }
-      .searchBar i {
-        border: 1px solid gainsboro;
-        height: 32px;
-        width: 28px;
-        font-size: 25px;
-      }
-      .searchBar input[type="text"] {
-        padding: 6px;
-        margin-top: 5px;
-        font-size: 17px;
-      }
+        .search-box{
+          display: inline-block;
+          position: relative;
+          top: 25px;
+          left: 130px;
+          transform: translate(-50%,-50%);
+          background: #fdfdfd;
+          height: 40px;
+          width: 240px;
+          border-radius: 16px;
+          padding: 0px;
+        }
+        .search-box:hover > .search-txt{
+            width: 200px;
+            padding: 0 0px;
+        }
+        .search-box:hover > .search-btn{
+           background: white;
+        }
+        .search-btn{
+            color: #e84118;
+            float: right;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+            text-decoration: none;
+        }
+        .search-txt{
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: rgb(202, 135, 135);
+            font-size: 16px;
+            transition: 0.4s;
+            line-height: 40px;
+            width: 0px;
+            padding-left: 5px;
+        }
+
       /* css for the unusedCredits, receivables and paymentDue */
       .unusedCredits h3,
       .receivables h3,
@@ -54,53 +227,343 @@
         text-decoration: underline 5px solid rgb(149, 138, 138);
         margin: 5px 0 10px 2px;
       }
+
+      /* css code for the clients timeline */
+      .clients-timeline{
+        top: 122%;
+        left: 24%;
+        transform: translate(-50%, -10%);
+        position: absolute;
+        width: 500px;
+      }
+      .clients-timeline .content-title h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+      .clients-timeline .timeline-content {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 3px #cacaca;
+        height: 400px;
+        overflow: scroll;
+      }
+      .clients-timeline .timeline-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .clients-timeline .timeline-content ul li a {
+        text-decoration: none;
+      }
+      .clients-timeline .timeline-content ul li span {
+        font-size: 16px;
+        color: #999;
+        display: block;
+        margin-bottom: -15px;
+        padding-left: 20px;
+        position: relative;
+      }
+      .clients-timeline .timeline-content ul li span::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border: 3px solid #b13636;
+        top: 2px;
+        left: 0;
+        border-radius: 50px;
+      }
+      .clients-timeline .timeline-content ul li h3 {
+        font-size: 22px;
+        line-height: 30px;
+        border: 3px solid #bd5050;
+        border-width: 0 0 0 3px;
+        padding: 5px 0 5px 16px;
+        margin-left: 5px;
+      }
+
+      /* styling for the scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      /* css code for the bar chart */
+      .graph{
+        width: 700px;
+        height: 500px;
+      }
       /* utility classes */
       .inlineElement {
         display: inline;
       }
       /* code to make responsive all the element present in this screen */
-      /* making search bar responsive */
-      @media screen and (max-width: 600px) {
-        .searchBar input[type="text"] {
-          float: none;
+     
+      @media screen and (max-width: 800px) {
+        .wrapper .sidebar .sidebar-inner{
+          left: -100%;
+        }
+        .wrapper .main-container,.wrapper .main-container .top-navbar{
+          width:100%;
+          margin-left:0;
+
+        }
+        .wrapper .main-container .top-navbar{
+          left: 0;
+        }
+        .wrapper .main-container .top-navbar .hamburger,.wrapper .close{
           display: block;
-          text-align: left;
-          width: 100%;
-          margin: 0;
-          padding: 14px;
         }
-        .searchBar input[type="text"] {
-          border: 1px solid #ccc;
+        .wrapper.active .sidebar .sidebar-inner{
+          left: 0;
         }
+        .wrapper.active .bg-shadow{
+          visibility: visible;
+          opacity: 0.7;
+        }
+        .wrapper .sidebar .sidebar-inner .sidebar-heading{
+          font-size: 0.85rem;
+        }
+        .main-container .clients-content{
+        position: relative;
+        right: 0;
+        top: 0px;
+        left: 0px;
+        /* border: 1px solid red; */
+        width: 100vw;
+      } 
       }
     </style>
   </head>
   <body>
-    <div class="mainClientContainer">
-      <div class="searchBar">
-        <input type="text" placeholder="Search Client Name" /><i
-          class="las la-search"
-        ></i>
-      </div>
-
-      <div class="unusedCredits">
-        <h3 class="inlineElement">Unused Credits Rs. <span> 1000</span></h3>
-      </div>
-      <div class="receivables">
-        <h3 class="inlineElement">Receivables Rs. <span> 1000</span></h3>
-      </div>
-      <div class="paymentDue">
-        <h3 class="inlineElement">Due Payment Rs. <span> 1000</span></h3>
-      </div>
-
-      <div class="personal-info">
-        <span>Name</span>
-        <span>Email Id</span>
-        <div class="">
-          <h3>Saved Address</h3>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="bg-shadow"></div>
+          <div class="sidebar-inner">
+            <div class="close">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="sidebar-heading">
+              <h1>Payment Tracker</h1>
+            </div>
+            <ul class="sidebar-menu">
+              <li>
+                <a href="/invoice/invoice.html">
+                  <div class="icon"><i class="fas fa-receipt"></i></div>
+                  <div class="title">Invoice</div>
+                </a>
+              </li>
+              <li>
+                <a href="/clients/clients.html">
+                  <div class="icon"><i class="fas fa-users"></i></div>
+                  <div class="title">Clients</div>
+                </a>
+              </li>
+              <li>
+                <a href="/payment received/received_payment2.html">
+                  <div class="icon"><i class="fas fa-sign-in-alt"></i></div>
+                  <div class="title">Payment Received</div>
+                </a>
+              </li>
+              <li>
+                <a href="/recurring-payment/recurring_payment.html">
+                  <div class="icon"><i class="fas fa-history"></i></div>
+                  <div class="title">Recurring Payment</div>
+                </a>
+              </li>
+              <li>
+                <a href="/timeline/timeline.html" active>
+                  <div class="icon"><i class="fas fa-chart-area"></i></div>
+                  <div class="title">Timeline</div>
+                </a>
+              </li>
+              <li>
+                <a href="/chart of account/Chart_of_account.html">
+                  <div class="icon"><i class="fas fa-chart-area"></i></div>
+                  <div class="title">Chart of A/c</div>
+                </a>
+              </li>
+              <li>
+                <a href="/timeline/timeline.html">
+                  <div class="icon"><i class="fas fa-file-invoice"></i></div>
+                  <div class="title">Credit Notes</div>
+                </a>
+              </li>
+              <li>
+                <a href="/reports/reports.html">
+                  <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+                  <div class="title">Reports</div>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      <div class="main-container">
+        <div class="top-navbar">
+          <div class="hamburger">
+            <div class="hamburger-inner">
+              <i class="fas fa-bars" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+       <div class="clients-content">
+         <div>
+            <div class="search-box">
+                <input class="search-txt" type="text" name="" placeholder="Type to search">
+                <a href="#" class="search-btn">
+                    <i class="las la-search"></i>
+                </a>
+            </div>
+            <div class="unusedCredits">
+              <h3 class="inlineElement">Unused Credits Rs. <span> 1000</span></h3>
+            </div>
+            <div class="receivables">
+              <h3 class="inlineElement">Receivables Rs. <span> 1000</span></h3>
+            </div>
+            <div class="paymentDue">
+              <h3 class="inlineElement">Due Payment Rs. <span> 1000</span></h3>
+            </div>
+        </div>
+        <div class="graph">
+          <div class="filter-graph">
+            <select name="filter" id="filterGraph">
+              <option value="lastSixMonth">Last 6 Months</option>
+              <option value="lastYear">Last Year</option>
+            </select>
+          </div>
+          <canvas id="clientsGraph" aria-label="chart" role="img"></canvas>
+        </div>
+    <div class="clients-timeline">
+        <div class="content-title">
+          <h2>Timeline</h2>
+        </div>
+        <div class="timeline-content">
+          <ul>
+            <li>
+              <a href="#">
+                <span>19 Apr 2021, 05:04 AM</span>
+                <div class="content">
+                  <h3>How to create gradient menu & drop menu tutorial</h3>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>19 Apr 2021, 05:04 AM</span>
+                <h3>How to create gradient menu & drop menu tutorial</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>19 Apr 2021, 05:04 AM</span>
+                <h3>How to create gradient menu & drop menu tutorial</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>19 Apr 2021, 05:04 AM</span>
+                <h3>How to create gradient menu & drop menu tutorial</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>19 Apr 2021, 05:04 AM</span>
+                <h3>How to create gradient menu & drop menu tutorial</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>19 Apr 2021, 05:04 AM</span>
+                <h3>How to create gradient menu & drop menu tutorial</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>19 Apr 2021, 05:04 AM</span>
+                <h3>How to create gradient menu & drop menu tutorial</h3>
+              </a>
+            </li>
+          </ul>
+        </div>
     </div>
-    <script src="clients_script.js"></script>
+          <div class="personal-info">
+            <span>Name</span>
+            <span>Email Id</span>
+            <div class="">
+              <h3>Saved Address</h3>
+            </div>
+          </div>
+       </div>
+      </div>
+    </div>
+    <script>
+      // this code for opening sidebar menu in mobile view
+      let humberger = document.querySelector(".hamburger .fas");
+      let closeBtn = document.querySelector(".close");
+      
+
+      humberger.addEventListener("click", function(){
+        let wrapper = document.querySelector(".wrapper");
+        wrapper.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click",function(){
+        let wrapper = document.querySelector(".wrapper");
+       wrapper.classList.remove("active");
+      })
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <script>
+      // this code for making chart first - chart of the timeline
+      const ctx = document.getElementById("clientsGraph").getContext("2d");
+      const clientsGraph = new Chart(ctx,{
+        type : "bar",
+        data:{
+          labels:["NOV 2020","DEC 2020","JAN 2021","FEB 2021","MAR 2021","APR 2021","MAY 2021","JUN 2021","JUL 2021","AUG 2021","SEP 2021","OCT 2021",],
+          datasets:[
+            {
+              data:[15000,17000,13000,14000,35000,24000,25000,25000,24000,32000,24000,25000],
+              label:"Invoice Generated",
+              backgroundColor:"yellow",
+              borderColor:"black",
+              borderWidth:1,
+            },
+          ]
+        },
+        options:{
+          responsive:true,
+          layout:{
+            padding:{
+              left:10,
+              right:10,
+              top:10,
+              bottom:10,
+            },
+          },
+      plugins:{
+          title:{
+            display: true,
+            text: "Total Payment",
+            position: "top",
+            font:{
+              size:20,
+              weight:"bold",
+            }
+            
+          },
+        }
+      },
+      })
+    
+    </script>
   </body>
 </html>
