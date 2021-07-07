@@ -161,10 +161,28 @@
         top: -24px;
         left: 250px;
       }
-      /* css for the reports-main-content */
+/* css for the reports-main-content */
       .main-container .reports-content .reports-main-content{
         display: flex;
 
+      }
+
+      /* css code for the receivabbles and overdue bar */
+      .receivabbles-overdue-bar{
+        display: flex;
+        height: 40px;
+        box-sizing: border-box;
+        width: calc(100vw - 570px);
+        border: 1px solid red;
+        justify-content: left;
+      }
+      .receivabbles-overdue-bar .receivabbles{
+        background: chartreuse;
+        width: 30%;
+      }
+      .receivabbles-overdue-bar .overdue{
+        background: blue;
+        width: 70%;
       }
       @media screen and (max-width: 800px) {
         .wrapper .sidebar .sidebar-inner{
@@ -285,6 +303,14 @@
               <canvas id="receivedAmountGraph" aria-label="chart" role="img" ></canvas>
             </div>
             <div class="received-overdue-table">
+              <div class="receivabbles-overdue-bar">
+                <div class="receivabbles">
+                  <span>Rs. 300</span>
+                </div>
+                <div class="overdue">
+                  <span>Rs. 700 </span>
+                </div>
+              </div>
 
             </div>
             <div class="invoice-payment-graph">
@@ -294,23 +320,9 @@
         </div>
       </div>
     </div>
-    <script>
-      let humberger = document.querySelector(".hamburger .fas");
-      let closeBtn = document.querySelector(".close");
-      
-
-      humberger.addEventListener("click", function(){
-        let wrapper = document.querySelector(".wrapper");
-        wrapper.classList.add("active");
-      });
-
-      closeBtn.addEventListener("click",function(){
-        let wrapper = document.querySelector(".wrapper");
-       wrapper.classList.remove("active");
-      })
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
     <script>
+      // this is the js code for making making payment received pie graph
       var ctx = document.getElementById("receivedAmountGraph").getContext("2d");
       var myTimelineChart = new Chart(ctx,{
         type : "pie",
@@ -326,6 +338,49 @@
           ]
         },
       })
+    </script>
+    <script>
+      // this is the js code for making side-bar menu responsive
+      let humberger = document.querySelector(".hamburger .fas");
+      let closeBtn = document.querySelector(".close");
+      
+
+      humberger.addEventListener("click", function(){
+        let wrapper = document.querySelector(".wrapper");
+        wrapper.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click",function(){
+        let wrapper = document.querySelector(".wrapper");
+       wrapper.classList.remove("active");
+      })
+
+      // this is the js code for making current receivables and overdue receivables tables
+      let receive = document.querySelector(".receivabbles");
+      let overdue = document.querySelector(".overdue");
+      let bar = document.querySelector(".receivabbles-overdue-bar");     
+      const receivedAmount = 200000;
+      // here received amount access data will be used which we get using api
+
+      const overdueAmount = 30000;
+      // like received amount here also data will be put using api
+
+      const total = receivedAmount + overdueAmount;
+      const receiveBar = receivedAmount*100/total ;
+      const overdueBar = overdueAmount*100/total ;
+
+      const receiveBarWidth = receiveBar + "%";
+      const overdueBarWidth = overdueBar + "%";
+
+      receive.style.width = receiveBarWidth;
+      overdue.style.width = overdueBarWidth;
+
+      receive.innerHTML = `<span>Rs. ${receivedAmount} </span>`;
+      overdue.innerHTML = `<span>Rs. ${overdueAmount} </span>`;
+
+
+
+
     </script>
   </body>
 </html>
