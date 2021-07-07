@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Tracker - Clients</title>
+    <link rel="stylesheet" href="clients_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* styling for the client container */
+      .mainClientContainer {
+        display: inline-block;
+        height: 100vh;
+        width: 80vw;
+        position: relative;
+        left: 250px;
+        top: 0;
+        border: 1px solid red;
+      }
+      /* styling for the search bar */
+      .searchBar {
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
+      .searchBar i {
+        border: 1px solid gainsboro;
+        height: 32px;
+        width: 28px;
+        font-size: 25px;
+      }
+      .searchBar input[type="text"] {
+        padding: 6px;
+        margin-top: 5px;
+        font-size: 17px;
+      }
+      /* css for the unusedCredits, receivables and paymentDue */
+      .unusedCredits h3,
+      .receivables h3,
+      .paymentDue h3 {
+        color: rgb(149, 138, 138);
+        padding: 0 0 5px 0;
+      }
+      .unusedCredits,
+      .receivables {
+        text-decoration: underline 5px solid rgb(149, 138, 138);
+        margin: 5px 0 10px 2px;
+      }
+      /* utility classes */
+      .inlineElement {
+        display: inline;
+      }
+      /* code to make responsive all the element present in this screen */
+      /* making search bar responsive */
+      @media screen and (max-width: 600px) {
+        .searchBar input[type="text"] {
+          float: none;
+          display: block;
+          text-align: left;
+          width: 100%;
+          margin: 0;
+          padding: 14px;
+        }
+        .searchBar input[type="text"] {
+          border: 1px solid #ccc;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainClientContainer">
+      <div class="searchBar">
+        <input type="text" placeholder="Search Client Name" /><i
+          class="las la-search"
+        ></i>
+      </div>
+
+      <div class="unusedCredits">
+        <h3 class="inlineElement">Unused Credits Rs. <span> 1000</span></h3>
+      </div>
+      <div class="receivables">
+        <h3 class="inlineElement">Receivables Rs. <span> 1000</span></h3>
+      </div>
+      <div class="paymentDue">
+        <h3 class="inlineElement">Due Payment Rs. <span> 1000</span></h3>
+      </div>
+
+      <div class="personal-info">
+        <span>Name</span>
+        <span>Email Id</span>
+        <div class="">
+          <h3>Saved Address</h3>
+        </div>
+      </div>
+    </div>
+    <script src="clients_script.js"></script>
+  </body>
+</html>

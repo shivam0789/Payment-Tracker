@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clients : Add New Client</title>
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
   </head>
   <style>
-    *{
-      padding: 0;margin: 0;
+    * {
+      padding: 0;
+      margin: 0;
       box-sizing: border-box;
       overflow: hidden;
     }
-    .container{
+    .container {
       position: relative;
       top: 0;
       left: 251px;
@@ -23,75 +27,81 @@
       background-color: #f2f2f2;
       overflow: hidden;
     }
-    .addClientPageHeader{
-font-size: 25px;
-/* text-align: center; */
-border-bottom: 2px solid black;
-font-weight: 600;
-margin: 0 0 0 20px;
+    .addClientPageHeader {
+      font-size: 25px;
+      /* text-align: center; */
+      border-bottom: 2px solid black;
+      font-weight: 600;
+      margin: 0 0 0 20px;
     }
-    .addClientPageBody{
+    .addClientPageBody {
       /* border: 1px solid green; */
       margin: 5px;
-      padding-left:5px ;
+      padding-left: 5px;
     }
-    .addClientPageBody form{
+    .addClientPageBody form {
       /* border: 1px solid blueviolet; */
       background-color: #fff;
-      box-shadow:2px 2px 2px 1px #f1e0e0;
+      box-shadow: 2px 2px 2px 1px #f1e0e0;
       width: 75vw;
-      padding-left:20px;
+      padding-left: 20px;
       margin: 0 0 20px 0;
-      
     }
-    .addClientPageBody form label{
+    .addClientPageBody form label {
       font-size: 18px;
       word-spacing: 1px;
     }
-    .addClientPageBody form input,.addClientPageBody form select,.addClientPageBody form select option{
+    .addClientPageBody form input,
+    .addClientPageBody form select,
+    .addClientPageBody form select option {
       padding: 3px auto 3px 8px;
       font-size: 18px;
       margin: 10px;
     }
-    .addClientService span{
+    .addClientService span {
       font-size: 20px;
       font-weight: 600;
       margin: 2px 5px 0 5px;
     }
-    .addClientService i{
+    .addClientService i {
       font-size: 20px;
       margin: 2px 0 0 0;
       cursor: pointer;
     }
     #addServiceTable {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
 
-#addServiceTable td, #addServiceTable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+    #addServiceTable td,
+    #addServiceTable th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
 
-#addServiceTable tr:nth-child(even){background-color: #fff;}
+    #addServiceTable tr:nth-child(even) {
+      background-color: #fff;
+    }
 
-#addServiceTable tr:hover {background-color: #ddd;}
+    #addServiceTable tr:hover {
+      background-color: #ddd;
+    }
 
-#addServiceTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
-}
+    #addServiceTable th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04aa6d;
+      color: white;
+    }
   </style>
   <body>
     <div class="container">
       <div class="addClientPage">
         <div class="addClientPageHeader">
-          <span><i class="las la-angle-right"></i>Add new client</span> <span>|</span
-          ><span> Edit added Client</span>
+          <span><i class="las la-angle-right"></i>Add new client</span>
+          <span>|</span><span> Edit added Client</span>
         </div>
         <div class="addClientPageBody">
           <form action="">
@@ -137,51 +147,50 @@ margin: 0 0 0 20px;
             </div>
           </form>
           <div class="addClientService">
-              <div>
-                <span>Add Service</span><i class="las la-plus-circle"></i>
-              </div>
-              <div>
-                <table id="addServiceTable">
-                    <tr>
-                      <th>Title</th>
-                      <th>Description</th>
-                      <th>Rate</th>
-                      <th>POC</th>
-                      <th>Other</th>
-                    </tr>
-                    <tr>
-                      <td>add a web page</td>
-                      <td>need to create a web page</td>
-                      <td>Rs. 5000 per page</td>
-                      <td>Lorem dolor.</td>
-                      <td>Lorem, ipsum.</td>
-                    </tr>
-                    <tr>
-                      <td>add a web page</td>
-                      <td>need to create a web page</td>
-                      <td>Rs. 5000 per page</td>
-                      <td>Lorem dolor.</td>
-                      <td>Lorem, ipsum.</td>
-                    </tr>
-                    <tr>
-                      <td>add a web page</td>
-                      <td>need to create a web page</td>
-                      <td>Rs. 5000 per page</td>
-                      <td>Lorem dolor.</td>
-                      <td>Lorem, ipsum.</td>
-                    </tr>
-                    <tr>
-                      <td>add a web page</td>
-                      <td>need to create a web page</td>
-                      <td>Rs. 5000 per page</td>
-                      <td>Lorem dolor.</td>
-                      <td>Lorem, ipsum.</td>
-                    </tr>
-                  </table>
-              </div>
+            <div>
+              <span>Add Service</span><i class="las la-plus-circle"></i>
+            </div>
+            <div>
+              <table id="addServiceTable">
+                <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Rate</th>
+                  <th>POC</th>
+                  <th>Other</th>
+                </tr>
+                <tr>
+                  <td>add a web page</td>
+                  <td>need to create a web page</td>
+                  <td>Rs. 5000 per page</td>
+                  <td>Lorem dolor.</td>
+                  <td>Lorem, ipsum.</td>
+                </tr>
+                <tr>
+                  <td>add a web page</td>
+                  <td>need to create a web page</td>
+                  <td>Rs. 5000 per page</td>
+                  <td>Lorem dolor.</td>
+                  <td>Lorem, ipsum.</td>
+                </tr>
+                <tr>
+                  <td>add a web page</td>
+                  <td>need to create a web page</td>
+                  <td>Rs. 5000 per page</td>
+                  <td>Lorem dolor.</td>
+                  <td>Lorem, ipsum.</td>
+                </tr>
+                <tr>
+                  <td>add a web page</td>
+                  <td>need to create a web page</td>
+                  <td>Rs. 5000 per page</td>
+                  <td>Lorem dolor.</td>
+                  <td>Lorem, ipsum.</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </body>
