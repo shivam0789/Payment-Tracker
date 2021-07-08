@@ -57,7 +57,7 @@
         transition: all 0.3s ease;
       }
       .wrapper .sidebar-menu li a {
-        padding: 10px 10px 10px 20px;
+        padding: 10px 10px 10px 10px;
         display: block;
         height: 58px;
         color: #dce1e9;
@@ -67,6 +67,12 @@
         text-transform: uppercase;
       }
       .wrapper .sidebar-menu li a .icon {
+        position: relative;
+        display: block;
+        min-width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
         font-size: 32px;
         margin: 0px 5px 5px 0px;
         display: inline-block;
@@ -144,16 +150,23 @@
         margin-top: 60px;
       }
       .wrapper .bg-shadow{
-width: 100%;
-height: 100%;
-position: fixed;
-top: 0;
-left: 0;
-background: #000;
-z-index: 98;
-opacity: 0;
-visibility: hidden;
-transition: all 0.3s ease;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #000;
+        z-index: 98;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      .main-container .credit-notes-content{
+        width: calc(100% - 250px);
+        position: relative;
+        right: 0;
+        top: -24px;
+        left: 250px;
       }
       @media screen and (max-width: 800px) {
         .wrapper .sidebar .sidebar-inner{
@@ -197,49 +210,55 @@ transition: all 0.3s ease;
             <ul class="sidebar-menu">
               <li>
                 <a href="/invoice/invoice.html">
-                  <div class="icon"><i class="fas fa-receipt"></i></div>
+                  <div class="icon"><i class="fas fa-receipt fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Invoice</div>
                 </a>
               </li>
               <li>
                 <a href="/clients/clients.html">
-                  <div class="icon"><i class="fas fa-users"></i></div>
+                  <div class="icon"><i class="fas fa-users fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Clients</div>
                 </a>
               </li>
               <li>
                 <a href="/payment received/received_payment.html">
-                  <div class="icon"><i class="fas fa-sign-in-alt"></i></div>
+                  <div class="icon"><i class="fas fa-sign-in-alt fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Payment Received</div>
                 </a>
               </li>
               <li>
                 <a href="/recurring-payment/recurring_payment.html">
-                  <div class="icon"><i class="fas fa-history"></i></div>
+                  <div class="icon"><i class="fas fa-history fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Recurring Payment</div>
                 </a>
               </li>
               <li>
+                <a href="/Employee/employee.html">
+                  <div class="icon"><i class="fas fa-user fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Employee</div>
+                </a>
+              </li>
+              <li>
                 <a href="/timeline/timeline.html">
-                  <div class="icon"><i class="fas fa-chart-area"></i></div>
+                  <div class="icon"><i class="fas fa-chart-area fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Timeline</div>
                 </a>
               </li>
               <li>
                 <a href="/chart of account/Chart_of_account.html">
-                  <div class="icon"><i class="fas fa-chart-area"></i></div>
+                  <div class="icon"><i class="fas fa-chart-area fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Chart of A/c</div>
                 </a>
               </li>
               <li>
                 <a href="https://www.google.com/">
-                  <div class="icon"><i class="fas fa-file-invoice"></i></div>
+                  <div class="icon"><i class="fas fa-file-invoice fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Credit Notes</div>
                 </a>
               </li>
               <li>
                 <a href="/reports/reports.html">
-                  <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+                  <div class="icon"><i class="fas fa-clipboard-list fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Reports</div>
                 </a>
               </li>
@@ -254,6 +273,9 @@ transition: all 0.3s ease;
               <i class="fas fa-bars" aria-hidden="true"></i>
             </div>
           </div>
+        </div>
+        <div class="credit-notes-content">
+
         </div>
       </div>
     </div>

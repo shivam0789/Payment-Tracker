@@ -1,56 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Payment CRM : Received Payment</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
-<style>
-*{
-    margin: 0;padding: 0;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-body {
-   display: inline-block;
-  font-family: "Lato", sans-serif;
-   position: relative;
-      height: 100vh;
-    width: 80vw;
-    left: 252px;
-    top: 0;
- /* border: 1px solid red; */
-}
-h2
-{
-font-weight: bolder;
-font-size: xx-large;
-}
-.btn{
-border: 2px solid green;
-padding: 6px;
-font-size: 10px;
-background-color: honeydew;
-border-radius: 6px;
-cursor: pointer;
-}
-.btn:hover{
-    padding: 8px;
-    font-size: 12px;
-    background: white;
-}
-.tableFixHead {
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment CRM : Received Payment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+      * {
+        list-style: none;
+        text-decoration: none;
+        font-family: "Noto Sans JP", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #bbc7df;
+      }
+      .wrapper {
+        display: flex;
+        width: 100%;
+      }
+      .wrapper .sidebar {
+        position: relative;
+      }
+      .wrapper .sidebar .sidebar-inner {
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #2a58ae;
+        z-index: 99;
+        transition: all 0.3s ease;
+      }
+      .wrapper .sidebar .sidebar-inner .sidebar-heading{
+        color: #fff;
+        /* font-size: 0.85rem; */
+      }
+      .wrapper .main-container {
+        margin-left: 250px;
+        width: calc(100%, -250px);
+        transition: all 0.3s ease;
+      }
+      .wrapper .sidebar-menu li a {
+        padding: 10px 10px 10px 10px;
+        display: block;
+        height: 58px;
+        color: #dce1e9;
+        position: relative;
+        margin-bottom: 1px;
+        /* text-align: center; */
+        text-transform: uppercase;
+      }
+      .wrapper .sidebar-menu li a .icon {
+        position: relative;
+        display: block;
+        min-width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 32px;
+        margin: 0px 5px 5px 0px;
+        display: inline-block;
+      }
+      .wrapper .sidebar-menu li a .title{
+        display: inline-block;
+      }
+      .wrapper .sidebar-menu li a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: #1fafac;
+        display: none;
+      }
+      .wrapper .sidebar-menu li a:hover,
+      .wrapper .sidebar-menu li a:active {
+        background: #1d4c9e;
+        color: #fff;
+      }
+      .wrapper .sidebar-menu li a:hover::before {
+        display: block;
+      }
+      .wrapper .main-container .top-navbar {
+        width: calc(100%, -250px);
+        height: 60px;
+        background: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 25px;
+        position: fixed;
+        top: 0;
+        left: 250px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125);
+        transition: all 0.3s ease;
+      }
+      .wrapper .main-container .top-navbar .hamburger {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        /* font-size: 30px; */
+        margin-left:5px;
+        display: none;
+        
+      }
+      .wrapper .main-container .top-navbar .hamburger .fas {
+        color: #88a3d0;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        clear: left;
+        transform: translate(-50%, -50%);
+      }
+      .wrapper .main-container .top-navbar .hamburger .fas:hover {
+        opacity: 0.5;
+      }
+      .wrapper .close {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 25px;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+      }
+      .wrapper .close:hover {
+        opacity: 0.5;
+      }
+      .wrapper .main-container .container {
+        padding: 30px;
+        margin-top: 60px;
+      }
+      .wrapper .bg-shadow{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #000;
+        z-index: 98;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      .main-container .received-payment-content{
+        width: calc(100% - 250px);
+        position: relative;
+        right: 0;
+        top: -24px;
+        left: 250px;
+      }
+
+      .btn{
+        border: 2px solid green;
+        padding: 6px;
+        font-size: 10px;
+        background-color: honeydew;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .btn:hover{
+        padding: 8px;
+        font-size: 12px;
+        background: white;
+      }
+      .tableFixHead {
         overflow-y: auto;
         overflow-x: auto;
         height: 150px;
-         display: block;
-    -webkit-overflow-scrolling: touch;
-    word-wrap: break-word;
-  white-space: nowrap;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+        word-wrap: break-word;
+        white-space: nowrap;
       }
       .tableFixHead thead th {
         position: sticky;
@@ -69,137 +212,258 @@ cursor: pointer;
         background: #eee;
       }
       center {
-    display: block;
-    text-align: -webkit-center;
-}
-</style>
-</head>
-<body>
-  <center>
-<div class="row">
- <div class="col" style="font-weight: bolder;">
-  <p style="font-size: 30px;">Generative Invoice(New) </p>
-<p> Client Name: <select style="border: 2px solid blue;" name="cars" id="cars">
-    <option value=""> Any Name</option>
-    <option value="">-</option>
-    <option value="">-</option>
-    <option value="">-</option>
-  </select> 
-</p>
-<p> Client Type: 
-  <select style="border: 2px solid blue;" name="cars" id="cars">
-    <option value=""> Influencer</option>
-    <option value="">Publisher</option>
-    <option value="">Advertiser</option>
-    <option value="">Follower</option>
-    <option value="">Marketer</option>
-  </select> 
-</p>
-<p> Services <input type="String" style="border: 2px solid blue;" placeholder="Enter a service" id="" name="" value="">
-  <button class="btn">+Add</button>
-  </p>
-  <div class="tableFixHead">
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Rate</th>
-            <th>Count</th>
-            <th>Net</th>
-            <th>Tax</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>CPC</td>
-            <td>-/-</td>
-            <td>Enter</td>
-            <td>-/-</td>
-            <td>Enter</td>
-            <td>-/-</td>
-          </tr>
-          <tr>
-            <td>CPI</td>
-            <td>-/-</td>
-            <td>Enter</td>
-            <td>-/-</td>
-            <td>Enter</td>
-            <td>-/-</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-<p style="font-weight: bolder;"> Grand Total: -/-
-</p> 
-<p> <b> NOTE: </b> Type Note  
-</p>
-<p> <b> A/c: </b>
-<select style="border: 2px solid blue;" name="" id="">
-    <option value="">- Select A/c Details -</option>
-    <option value="">-</option>
-    <option value="">-</option>
-    <option value="">-</option>
-  </select>
-  </p> 
-</div>
-<div class="col" > 
-  <a href="bounced_cheque_received_payment2.html" style="font-size: 30px;"> Bounce Cheque </a>
-<p> <b> Invoice No. : </b> XXX
-</p>
-<p> <b>Date: </b> XXXX
-</p>
-<p> <b> Description: </b> Type
-  </p>
-    </div>
-</div>
-</center>
-<center>
-<p>   Payment Received History:  <b>Sort by:</b>   <select style="border: 2px solid blue;" name="" id="">
-    <option value=""> Date</option>
-    <option value=""> Client Id</option>
-    <option value=""> Invoice Id</option>
-    <option value=""> - etc. -</option>
-  </select>
+        display: block;
+        text-align: -webkit-center;
+      }
+      @media screen and (max-width: 800px) {
+        .wrapper .sidebar .sidebar-inner{
+          left: -100%;
+        }
+        .wrapper .main-container,.wrapper .main-container .top-navbar{
+          width:100%;
+          margin-left:0;
 
-</p>
-  <div class="tableFixHead">
-      <table>
-        <thead>
-          <tr>
-            <th>From</th>
-            <th>To</th>
-            <th>Invoice</th>
-            <th> Amount</th>
-            <th> Date</th>
-            <th> Description</th>
-            <th> Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td> Name</td>
-            <td> Name</td>
-            <td> Number</td>
-            <td> Number</td>
-            <td> String</td>
-            <td> String</td>
-            <th> String</th>
-          </tr>
-          <tr>
-            <td> Name</td>
-            <td> Name</td>
-            <td> Number</td>
-            <td> Number</td>
-            <td> String</td>
-            <td> String</td>
-            <th> String</th>
-          </tr>
-        </tbody>
-      </table>
+        }
+        .wrapper .main-container .top-navbar{
+          left: 0;
+        }
+        .wrapper .main-container .top-navbar .hamburger,.wrapper .close{
+          display: block;
+        }
+        .wrapper.active .sidebar .sidebar-inner{
+          left: 0;
+        }
+        .wrapper.active .bg-shadow{
+          visibility: visible;
+          opacity: 0.7;
+        }
+        .wrapper .sidebar .sidebar-inner .sidebar-heading{
+          font-size: 0.85rem;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="bg-shadow"></div>
+          <div class="sidebar-inner">
+            <div class="close">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="sidebar-heading">
+              <h2>Payment Tracker</h2>
+            </div>
+            <ul class="sidebar-menu">
+              <li>
+                <a href="/invoice/invoice.html">
+                  <div class="icon"><i class="fas fa-receipt fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Invoice</div>
+                </a>
+              </li>
+              <li>
+                <a href="/clients/clients.html">
+                  <div class="icon"><i class="fas fa-users fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Clients</div>
+                </a>
+              </li>
+              <li>
+                <a href="/payment received/received_payment.html">
+                  <div class="icon"><i class="fas fa-sign-in-alt fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Payment Received</div>
+                </a>
+              </li>
+              <li>
+                <a href="/recurring-payment/recurring_payment.html">
+                  <div class="icon"><i class="fas fa-history fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Recurring Payment</div>
+                </a>
+              </li>
+              <li>
+                <a href="/Employee/employee.html">
+                  <div class="icon"><i class="fas fa-user fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Employee</div>
+                </a>
+              </li>
+              <li>
+                <a href="/timeline/timeline.html">
+                  <div class="icon"><i class="fas fa-chart-area fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Timeline</div>
+                </a>
+              </li>
+              <li>
+                <a href="/chart of account/Chart_of_account.html">
+                  <div class="icon"><i class="fas fa-chart-area fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Chart of A/c</div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.google.com/">
+                  <div class="icon"><i class="fas fa-file-invoice fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Credit Notes</div>
+                </a>
+              </li>
+              <li>
+                <a href="/reports/reports.html">
+                  <div class="icon"><i class="fas fa-clipboard-list fa-xs" aria-hidden="true"></i></div>
+                  <div class="title">Reports</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="main-container">
+        <div class="top-navbar">
+          <div class="hamburger">
+            <div class="hamburger-inner">
+              <i class="fas fa-bars" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="received-payment-content">
+            <center>
+          <div class="row">
+           <div class="col" style="font-weight: bolder;">
+            <p style="font-size: 30px;">Generative Invoice(New) </p>
+          <p> Client Name: <select style="border: 2px solid blue;" name="cars" id="cars">
+              <option value=""> Any Name</option>
+              <option value="">-</option>
+              <option value="">-</option>
+              <option value="">-</option>
+            </select> 
+          </p>
+          <p> Client Type: 
+            <select style="border: 2px solid blue;" name="cars" id="cars">
+              <option value=""> Influencer</option>
+              <option value="">Publisher</option>
+              <option value="">Advertiser</option>
+              <option value="">Follower</option>
+              <option value="">Marketer</option>
+            </select> 
+          </p>
+          <p> Services <input type="String" style="border: 2px solid blue;" placeholder="Enter a service" id="" name="" value="">
+            <button class="btn">+Add</button>
+            </p>
+            <div class="tableFixHead">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Rate</th>
+                      <th>Count</th>
+                      <th>Net</th>
+                      <th>Tax</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>CPC</td>
+                      <td>-/-</td>
+                      <td>Enter</td>
+                      <td>-/-</td>
+                      <td>Enter</td>
+                      <td>-/-</td>
+                    </tr>
+                    <tr>
+                      <td>CPI</td>
+                      <td>-/-</td>
+                      <td>Enter</td>
+                      <td>-/-</td>
+                      <td>Enter</td>
+                      <td>-/-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          <p style="font-weight: bolder;"> Grand Total: -/-
+          </p> 
+          <p> <b> NOTE: </b> Type Note  
+          </p>
+          <p> <b> A/c: </b>
+          <select style="border: 2px solid blue;" name="" id="">
+              <option value="">- Select A/c Details -</option>
+              <option value="">-</option>
+              <option value="">-</option>
+              <option value="">-</option>
+            </select>
+            </p> 
+          </div>
+          <div class="col" > 
+            <a href="bounced_cheque_received_payment2.html" style="font-size: 30px;"> Bounce Cheque </a>
+          <p> <b> Invoice No. : </b> XXX
+          </p>
+          <p> <b>Date: </b> XXXX
+          </p>
+          <p> <b> Description: </b> Type
+            </p>
+              </div>
+          </div>
+          </center>
+          <center>
+          <p>   Payment Received History:  <b>Sort by:</b>   <select style="border: 2px solid blue;" name="" id="">
+              <option value=""> Date</option>
+              <option value=""> Client Id</option>
+              <option value=""> Invoice Id</option>
+              <option value=""> - etc. -</option>
+            </select>
+          
+          </p>
+            <div class="tableFixHead">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>From</th>
+                      <th>To</th>
+                      <th>Invoice</th>
+                      <th> Amount</th>
+                      <th> Date</th>
+                      <th> Description</th>
+                      <th> Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> Name</td>
+                      <td> Name</td>
+                      <td> Number</td>
+                      <td> Number</td>
+                      <td> String</td>
+                      <td> String</td>
+                      <th> String</th>
+                    </tr>
+                    <tr>
+                      <td> Name</td>
+                      <td> Name</td>
+                      <td> Number</td>
+                      <td> Number</td>
+                      <td> String</td>
+                      <td> String</td>
+                      <th> String</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          
+          </center>
+        </div>
+      </div>
     </div>
+    <script>
+      let humberger = document.querySelector(".hamburger .fas");
+      let closeBtn = document.querySelector(".close");
+      
 
-</center>
+      humberger.addEventListener("click", function(){
+        let wrapper = document.querySelector(".wrapper");
+        wrapper.classList.add("active");
+      });
 
-</body>
+      closeBtn.addEventListener("click",function(){
+        let wrapper = document.querySelector(".wrapper");
+       wrapper.classList.remove("active");
+      })
+    </script>
+  </body>
 </html>
