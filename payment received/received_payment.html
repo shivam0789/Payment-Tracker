@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment CRM : Received Payment</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<style>
+*{
+    margin: 0;padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+body {
+   display: inline-block;
+  font-family: "Lato", sans-serif;
+   position: relative;
+      height: 100vh;
+    width: 80vw;
+    left: 252px;
+    top: 0;
+ /* border: 1px solid red; */
+}
+h2
+{
+font-weight: bolder;
+font-size: xx-large;
+}
+.btn{
+border: 2px solid green;
+padding: 6px;
+font-size: 10px;
+background-color: honeydew;
+border-radius: 6px;
+cursor: pointer;
+}
+.btn:hover{
+    padding: 8px;
+    font-size: 12px;
+    background: white;
+}
+.tableFixHead {
+        overflow-y: auto;
+        overflow-x: auto;
+        height: 150px;
+         display: block;
+    -webkit-overflow-scrolling: touch;
+    word-wrap: break-word;
+  white-space: nowrap;
+      }
+      .tableFixHead thead th {
+        position: sticky;
+        top: 0;
+      }
+      table {
+        border-collapse: collapse;
+        width: 60%;
+      }
+      th,
+      td {
+        padding: 8px 16px;
+        border: 1px solid blue;
+      }
+      th {
+        background: #eee;
+      }
+      center {
+    display: block;
+    text-align: -webkit-center;
+}
+</style>
+</head>
+<body>
+  <center>
+<div class="row">
+ <div class="col" style="font-weight: bolder;">
+  <p style="font-size: 30px;">Generative Invoice(New) </p>
+<p> Client Name: <select style="border: 2px solid blue;" name="cars" id="cars">
+    <option value=""> Any Name</option>
+    <option value="">-</option>
+    <option value="">-</option>
+    <option value="">-</option>
+  </select> 
+</p>
+<p> Client Type: 
+  <select style="border: 2px solid blue;" name="cars" id="cars">
+    <option value=""> Influencer</option>
+    <option value="">Publisher</option>
+    <option value="">Advertiser</option>
+    <option value="">Follower</option>
+    <option value="">Marketer</option>
+  </select> 
+</p>
+<p> Services <input type="String" style="border: 2px solid blue;" placeholder="Enter a service" id="" name="" value="">
+  <button class="btn">+Add</button>
+  </p>
+  <div class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Rate</th>
+            <th>Count</th>
+            <th>Net</th>
+            <th>Tax</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPC</td>
+            <td>-/-</td>
+            <td>Enter</td>
+            <td>-/-</td>
+            <td>Enter</td>
+            <td>-/-</td>
+          </tr>
+          <tr>
+            <td>CPI</td>
+            <td>-/-</td>
+            <td>Enter</td>
+            <td>-/-</td>
+            <td>Enter</td>
+            <td>-/-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<p style="font-weight: bolder;"> Grand Total: -/-
+</p> 
+<p> <b> NOTE: </b> Type Note  
+</p>
+<p> <b> A/c: </b>
+<select style="border: 2px solid blue;" name="" id="">
+    <option value="">- Select A/c Details -</option>
+    <option value="">-</option>
+    <option value="">-</option>
+    <option value="">-</option>
+  </select>
+  </p> 
+</div>
+<div class="col" > 
+  <a href="bounced_cheque_received_payment2.html" style="font-size: 30px;"> Bounce Cheque </a>
+<p> <b> Invoice No. : </b> XXX
+</p>
+<p> <b>Date: </b> XXXX
+</p>
+<p> <b> Description: </b> Type
+  </p>
+    </div>
+</div>
+</center>
+<center>
+<p>   Payment Received History:  <b>Sort by:</b>   <select style="border: 2px solid blue;" name="" id="">
+    <option value=""> Date</option>
+    <option value=""> Client Id</option>
+    <option value=""> Invoice Id</option>
+    <option value=""> - etc. -</option>
+  </select>
+
+</p>
+  <div class="tableFixHead">
+      <table>
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Invoice</th>
+            <th> Amount</th>
+            <th> Date</th>
+            <th> Description</th>
+            <th> Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> Name</td>
+            <td> Name</td>
+            <td> Number</td>
+            <td> Number</td>
+            <td> String</td>
+            <td> String</td>
+            <th> String</th>
+          </tr>
+          <tr>
+            <td> Name</td>
+            <td> Name</td>
+            <td> Number</td>
+            <td> Number</td>
+            <td> String</td>
+            <td> String</td>
+            <th> String</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</center>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <title>Add Recurring Payment : Draft Invoice</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="draftInvoiceHeader">
+        <span>Draft Invoice <i class="las la-chevron-left"></i></span>
+        <span class="rightPartHeader">
+          <span class="userId"><i class="las la-user-circle"></i>user Id</span>
+          <span>YoursBiz</span>
+          <span>logo</span>
+        </span>
+      </div>
+      <div class="notes">
+        <h3>Notes :</h3>
+        <p class="notes-content">
+          Draft invoice have been created from reccuring invoice runs. Use
+          delete option to remove Draft invoice that you di not wish to process.
+          Select the Edit option to Edit the due date for Payment by cilcking on
+          Date & Edit Email by clicking Email Address.
+        </p>
+      </div>
+      <div>
+        <label for="search">Search</label>
+        <input type="text" id="search" />
+
+        <select name="filter" id="filter">
+          <option value="byName">By Name</option>
+          <option value="byName">By Date</option>
+          <option value="byName">.....</option>
+        </select>
+      </div>
+      <div class="payment-table">
+        <table>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Clients Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Due Date</th>
+            <th>Email</th>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+            <td>abc</td>
+            <td>text</td>
+            <td>08/12/2020</td>
+            <td>10000</td>
+            <td>25/05/2021</td>
+            <td>text</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+            <td>xyz</td>
+            <td>text</td>
+            <td>08/12/2020</td>
+            <td>10000</td>
+            <td>25/05/2021</td>
+            <td>text</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+            <td>pqr</td>
+            <td>text</td>
+            <td>08/12/2020</td>
+            <td>10000</td>
+            <td>25/05/2021</td>
+            <td>text</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" /></td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+            <td>pqr</td>
+            <td>text</td>
+            <td>08/12/2020</td>
+            <td>10000</td>
+            <td>25/05/2021</td>
+            <td>text</td>
+          </tr>
+        </table>
+        <div>
+          <button class="btn" id="btnSelectAll">Select All</button>
+          <button class="btn" id="btnDeselectAll">Deselect All</button>
+        </div>
+      </div>
+      <div>
+        <button>Process & Email</button>
+        <button>abcxyz</button>
+      </div>
+    </div>
+  </body>
+</html>
