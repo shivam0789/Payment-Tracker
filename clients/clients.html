@@ -31,6 +31,7 @@
       body {
         background: #bbc7df;
       }
+ /* css for the sidebar menu */
       .wrapper {
         display: flex;
         width: 100%;
@@ -51,7 +52,6 @@
       .wrapper .sidebar .sidebar-inner .sidebar-heading h1{
         color: #fff;
         font-weight: 900;
-        /* font-size: 0.85rem; */
       }
       .wrapper .main-container {
         margin-left: 250px;
@@ -65,7 +65,6 @@
         color: #ffffff;
         position: relative;
         margin-bottom: 1px;
-        /* text-align: center; */
         text-transform: uppercase;
       }
       .wrapper .sidebar-menu li a .icon {
@@ -112,13 +111,11 @@
         left: 250px;
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125);
         transition: all 0.3s ease;
-        /* display: none; */
       }
       .wrapper .main-container .top-navbar .hamburger {
         width: 40px;
         height: 40px;
         position: relative;
-        /* font-size: 30px; */
         margin-left:5px;
         display: none;
         
@@ -165,7 +162,7 @@
         transition: all 0.3s ease;
       }
 
-      /* css for the main content*/
+ /* css for the main content*/
 
       /* css for the heading */
       .main-container .clients-content{
@@ -315,6 +312,7 @@
       /* code to make responsive all the element present in this screen */
      
       @media screen and (max-width: 800px) {
+        /* css to make sidebar menu responsive */
         .wrapper .sidebar .sidebar-inner{
           left: -100%;
         }
@@ -339,12 +337,12 @@
         .wrapper .sidebar .sidebar-inner .sidebar-heading{
           font-size: 0.85rem;
         }
+        /* css to make main container responsive */
         .main-container .clients-content{
         position: relative;
         right: 0;
         top: 0px;
         left: 0px;
-        /* border: 1px solid red; */
         width: 100vw;
       } 
       }
