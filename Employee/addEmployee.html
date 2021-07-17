@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Payment CRM: Employee</title>
+<title> Payment CRM: Add|Edit Employee</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link
       rel="stylesheet"
@@ -21,31 +21,31 @@
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
     *{
-      list-style: none;
-      text-decoration: none;
-      font-family: "Noto Sans JP", sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-     }
+        list-style: none;
+        text-decoration: none;
+        font-family: "Noto Sans JP", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     body {
-      display: inline-block;
-      font-family: "Lato", sans-serif;
-      position: relative;
-      height: 100vh;
-      width: 80vw;
-      top: 0; 
-      background: #bbc7df;
-      left: 252px;
-      }
+        display: inline-block;
+        font-family: "Lato", sans-serif;
+        position: relative;
+        height: 100vh;
+        width: 80vw;
+        top: 0; 
+        background: #bbc7df;
+        left: 252px;
+        }
     .wrapper {
         display: flex;
         width: 100%;
       }
-      .wrapper .sidebar {
+    .wrapper .sidebar {
         position: relative;
       }
-      .wrapper .sidebar .sidebar-inner {
+    .wrapper .sidebar .sidebar-inner {
         width: 250px;
         position: fixed;
         top: 0;
@@ -55,17 +55,17 @@
         z-index: 99;
         transition: all 0.3s ease;
       }
-      .wrapper .sidebar .sidebar-inner .sidebar-heading h2{
-        font-size: 2rem;
-        font-weight: 900;
+    .wrapper .sidebar .sidebar-inner .sidebar-heading h2{
         color: #fff;
+        font-weight: 900;
+        font-size: 2rem;
       }
-      .wrapper .main-container {
+    .wrapper .main-container {
         margin-left: 250px;
         width: calc(100%, -250px);
         transition: all 0.3s ease;
       }
-      .wrapper .sidebar-menu li a {
+    .wrapper .sidebar-menu li a {
         padding: 10px 10px 10px 10px;
         display: block;
         height: 58px;
@@ -74,7 +74,7 @@
         margin-bottom: 1px;
         text-transform: uppercase;
       }
-      .wrapper .sidebar-menu li a .icon {
+    .wrapper .sidebar-menu li a .icon {
         position: relative;
         min-width: 60px;
         height: 60px;
@@ -84,10 +84,10 @@
         margin: 0px 5px 5px 0px;
         display: inline-block;
       }
-      .wrapper .sidebar-menu li a .title{
+    .wrapper .sidebar-menu li a .title{
         display: inline-block;
       }
-      .wrapper .sidebar-menu li a::before {
+    .wrapper .sidebar-menu li a::before {
         content: "";
         position: absolute;
         top: 0;
@@ -97,15 +97,15 @@
         background: #1fafac;
         display: none;
       }
-      .wrapper .sidebar-menu li a:hover,
-      .wrapper .sidebar-menu li a:active {
+    .wrapper .sidebar-menu li a:hover,
+    .wrapper .sidebar-menu li a:active {
         background: #1d4c9e;
         color: #fff;
       }
-      .wrapper .sidebar-menu li a:hover::before {
+    .wrapper .sidebar-menu li a:hover::before {
         display: block;
       }
-      .wrapper .main-container .top-navbar {
+    .wrapper .main-container .top-navbar {
         width: calc(100%, -250px);
         height: 60px;
         background: #ffffff;
@@ -118,14 +118,14 @@
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125);
         transition: all 0.3s ease;
       }
-     .main-container .top-navbar .hamburger {
+    .main-container .top-navbar .hamburger {
         width: 40px;
         height: 40px;
         position: relative;
         margin-left:5px;
-        display: none;   
+        display: none;
       }
-      .main-container .top-navbar .hamburger .fas {
+    .main-container .top-navbar .hamburger .fas {
         color: #88a3d0;
         font-size: 30px;
         cursor: pointer;
@@ -135,7 +135,8 @@
         clear: left;
         transform: translate(-50%, -50%);
       }
-      .main-container .top-navbar .hamburger .fas:hover {
+      
+    .main-container .top-navbar .hamburger .fas:hover {
         opacity: 0.5;
       }
       .wrapper .close {
@@ -166,34 +167,73 @@
         visibility: hidden;
         transition: all 0.3s ease;
       }
-
-      /* css for the add employee button */
-      .add-employee-btn{
-        margin: 0.4rem 0 0 0.4rem;
+      .main-container .addEmployee{
+        background-color:#1F969A;
+        height: 50px;
+        margin-top: 0.4rem;
       }
-      .add-employee-btn .btn{
+      .main-container .addEmployee p{
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 50px;
+        text-align: center;
+        vertical-align: middle;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .addEmployee-form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100vw - 272px);
+        height: calc(100vh - 110px);
+        padding: 0 0 0 20px;
+      }
+      .addEmployee-form .form-element{
+        min-width:500px;
+        line-height: 2.5rem;
+      }
+      .addEmployee-form .form-element input{
+        border: none;
+        height: 35px;
+        width: 320px;
+        padding: 0px 0 0 10px;
+        border-radius: 10px;
+        /* margin: 0 0 0 0.4rem; */
+      }
+      .addEmployee-form .form-element span{
+        display: block;
+        line-height: 1.6rem;
+      }
+      .saveBtn{
+        position: absolute;
+        right: 0rem;
+        bottom: 0.3rem;
+      }
+      .btn{
         border:1px solid #fff;
-        background-color: #fff;
         text-transform: uppercase;
         border-radius: 3px;
         font-weight: 700;
-        padding: 12px 24px;
+        padding: 0.6rem 1rem;
         cursor: pointer;
         letter-spacing: 1px;
+        width: 7rem;
+        background-color: #fff;
       }
-      .add-employee-btn .employee-btn:hover{
+      .btn:hover{
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-
       }
-
       @media screen and (max-width: 800px) {
         body {
-       display: inline-block;
-       font-family: "Lato", sans-serif;
-       position: relative;
-       height: 100vh;
-       width: 100vw;
-       top: 0; 
+        display: inline-block;
+        font-family: "Lato", sans-serif;
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        top: 0; 
         background: #bbc7df;
         left: 0px;
         }
@@ -222,78 +262,7 @@
           font-size: 0.85rem;
       }
       }
-      /* css for the table */
-      .table-heading{
-        background-color:#1F969A;
-        height: 50px;
-        margin-top: 0.4rem;
-      }
-      .table-heading p{
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #fff;
-        line-height: 50px;
-        text-align: center;
-        vertical-align: middle;
-        letter-spacing: 1px;
-      }
-      .tableFixHead {
-        overflow-y: auto;
-        overflow-x: auto;
-        height: 50%;
-        display: block;
-        -webkit-overflow-scrolling: touch;
-        word-wrap: break-word;
-        white-space: nowrap;
-      }
-      .tableFixHead thead th {
-        position: sticky;
-        top: 0;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-      th,
-      td {
-        padding: 4px 8px;
-        /* border: 1px solid blue; */
-      }
-      th {
-        background: #eee;
-      }
-      center {
-        display: block;
-        text-align: -webkit-center;
-      }
-      #addServiceTable{
-        border: 2px solid #fff;
-        border-radius: 10%;
-      }
-      #addServiceTable tr:nth-child(even){
-        background-color: #fff;
-      }
-      #addServiceTable tr:hover {
-        background-color: #ddd;
-      }
-      #addServiceTable th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-      }
-      .totalAmount{
-        background-color: #fff;
-        margin-top: 2rem;
-        height: 3rem;
-        vertical-align: middle;
-        line-height: 3rem;
-      }
-      .totalAmount a{
-        font-size: 1.25rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        color: blue;
-      }
+      
 </style>
 </head>
 <body>
@@ -347,7 +316,7 @@
               <li>
                 <a href="/chart of account/Chart_of_account.html">
                   <div class="icon"><i class="fas fa-chart-area fa-xs" aria-hidden="true"></i></div>
-                  <div class="title">Chart of Account</div>
+                  <div class="title">Chart of A/c</div>
                 </a>
               </li>
               <li>
@@ -372,105 +341,51 @@
               <i class="fas fa-bars" aria-hidden="true"></i>
           </div>
         </div>
-        <div class="add-employee-btn">
-          <a href="addEmployee.html" class="btn employee-btn">  Add Employee
-          </a>
+        <div class="addEmployee">
+          <p> Add Employee | Edit Employee </p>
         </div>
-        <div class="table-heading">
-          <p> Payment Table </p>
+        <div class="addEmployee-form">
+          <div class="form-element"> <span>Name :</span>
+            <input type="string"   placeholder="Enter Your Name" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element" > <span>Designation :</span> 
+            <input type="string"   placeholder="Enter Your Designation" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"> <span>Email Id:</span> 
+            <input type="string"   placeholder="Enter Your Email id" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"><span> Mobile Number:</span>
+            <input type="Number"   placeholder="+91" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"> <span>Address:</span>
+            <input type="string"  placeholder="Enter Your Address" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"> <span>Salary:</span>
+            <input type="Number"  placeholder="Enter Salary" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"> <span>Joining Date:</span> 
+            <input type="string"  placeholder="Enter Joining Date" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"> <span>A/c Detail:</span>
+            <input type="Number" placeholder="Enter Account Details" id="" name="" value="" required />
+          </div>
+          <div class="form-element"> <span>Account Number:</span>
+            <input type="Number" placeholder="Enter Account Number" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"> <span>Account Name:</span>
+            <input type="string"  placeholder="Enter Account Name" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"> <span>IFSC Code:</span>
+            <input type="string"  placeholder="Enter IFSC code" id="" name="" value="" required /> 
+          </div>
+          <div class="form-element"><span> Description:</span>
+            <input type="string"  placeholder="Write some description about Employee" id="" name="" value="" required /> 
+          </div>
         </div>
-        <div class="tableFixHead">
-          <table id="addServiceTable">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Designation</th>
-                <th> Mail Id</th>
-                <th>Mobile No.</th>
-                <th>Salary</th>
-                <th>Incentives</th>
-                <th>Other</th>
-                <th>Payment Date</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td> Jagdish Kumar</td>
-                <td> Manager</td>
-                <td>jkumar19@gmail.com</td>
-                <td>99999999999</td>
-                <td>55000</td>
-                <td>15000</td>
-                <td>-/-</td>
-                <td>15/06/2021</td>
-                <td>Pending</td>
-              </tr>
-              <tr>
-                <td> ABC</td>
-                <td> ABC</td>
-                <td>ABC@gmail.com</td>
-                <td>99999999999</td>
-                <td>00000</td>
-                <td>00000</td>
-                <td>-/-</td>
-                <td>18/06/2021</td>
-                <td>Completed</td>
-              </tr>
-              <tr>
-                <td> ABC</td>
-                <td> ABC</td>
-                <td>ABC@gmail.com</td>
-                <td>99999999999</td>
-                <td>00000</td>
-                <td>00000</td>
-                <td>-/-</td>
-                <td>18/06/2021</td>
-                <td>Completed</td>
-              </tr>
-              <tr>
-                <td> ABC</td>
-                <td> ABC</td>
-                <td>ABC@gmail.com</td>
-                <td>99999999999</td>
-                <td>00000</td>
-                <td>00000</td>
-                <td>-/-</td>
-                <td>18/06/2021</td>
-                <td>Completed</td>
-              </tr>
-              <tr>
-                <td> ABC</td>
-                <td> ABC</td>
-                <td>ABC@gmail.com</td>
-                <td>99999999999</td>
-                <td>00000</td>
-                <td>00000</td>
-                <td>-/-</td>
-                <td>18/06/2021</td>
-                <td>Completed</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-    <div class="row">
-      <div class="col totalAmount" >
-      <a>Total Monthly Payable Amount:</a> Rs.XXXXX  
+      </div>
     </div>
-    <script>
-       let humberger = document.querySelector(".hamburger .fas");
-      let closeBtn = document.querySelector(".close");
-      
-
-      humberger.addEventListener("click", function(){
-        let wrapper = document.querySelector(".wrapper");
-        wrapper.classList.add("active");
-      });
-
-      closeBtn.addEventListener("click",function(){
-        let wrapper = document.querySelector(".wrapper");
-       wrapper.classList.remove("active");
-      })
-    </script>
-</body>
+    <div class="saveBtn">
+      <button class="btn">Save</button> 
+    </div>
+  </body>
 </html>
