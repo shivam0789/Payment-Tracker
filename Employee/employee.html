@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Payment CRM: Invoice</title>
+<title> Payment CRM: Employee</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link
       rel="stylesheet"
@@ -20,27 +20,25 @@
     />
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
-*{
-    list-style: none;
-        text-decoration: none;
-        font-family: "Noto Sans JP", sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        /* overflow: scroll; */
-}
-body {
-  display: inline-block;
-  font-family: "Lato", sans-serif;
-   position: relative;
+    *{
+      list-style: none;
+      text-decoration: none;
+      font-family: "Noto Sans JP", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+     }
+    body {
+      display: inline-block;
+      font-family: "Lato", sans-serif;
+      position: relative;
       height: 100vh;
-    width: 80vw;
-    top: 0; 
- /* border: 1px solid red; */
-        background: #bbc7df;
-        left: 252px;
-}
- .wrapper {
+      width: 80vw;
+      top: 0; 
+      background: #bbc7df;
+      left: 252px;
+      }
+    .wrapper {
         display: flex;
         width: 100%;
       }
@@ -58,9 +56,9 @@ body {
         transition: all 0.3s ease;
       }
       .wrapper .sidebar .sidebar-inner .sidebar-heading h2{
-        color: #fff;
+        font-size: 2rem;
         font-weight: 900;
-        /* font-size: 0.85rem; */
+        color: #fff;
       }
       .wrapper .main-container {
         margin-left: 250px;
@@ -68,16 +66,20 @@ body {
         transition: all 0.3s ease;
       }
       .wrapper .sidebar-menu li a {
-        padding: 10px 10px 10px 20px;
+        padding: 10px 10px 10px 10px;
         display: block;
         height: 58px;
-        color: #ffffff;
+        color: #dce1e9;
         position: relative;
         margin-bottom: 1px;
-        text-align: center;
         text-transform: uppercase;
       }
       .wrapper .sidebar-menu li a .icon {
+        position: relative;
+        min-width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
         font-size: 32px;
         margin: 0px 5px 5px 0px;
         display: inline-block;
@@ -116,16 +118,14 @@ body {
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125);
         transition: all 0.3s ease;
       }
-      .wrapper .main-container .top-navbar .hamburger {
+     .main-container .top-navbar .hamburger {
         width: 40px;
         height: 40px;
         position: relative;
-        /* font-size: 30px; */
         margin-left:5px;
-        display: none;
-        
+        display: none;   
       }
-      .wrapper .main-container .top-navbar .hamburger .fas {
+      .main-container .top-navbar .hamburger .fas {
         color: #88a3d0;
         font-size: 30px;
         cursor: pointer;
@@ -135,7 +135,7 @@ body {
         clear: left;
         transform: translate(-50%, -50%);
       }
-      .wrapper .main-container .top-navbar .hamburger .fas:hover {
+      .main-container .top-navbar .hamburger .fas:hover {
         opacity: 0.5;
       }
       .wrapper .close {
@@ -166,18 +166,37 @@ body {
         visibility: hidden;
         transition: all 0.3s ease;
       }
+
+      /* css for the add employee button */
+      .add-employee-btn{
+        margin: 0.4rem 0 0 0.4rem;
+      }
+      .add-employee-btn .btn{
+        border:1px solid #fff;
+        background-color: #fff;
+        text-transform: uppercase;
+        border-radius: 3px;
+        font-weight: 700;
+        padding: 12px 24px;
+        cursor: pointer;
+        letter-spacing: 1px;
+      }
+      .add-employee-btn .employee-btn:hover{
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+      }
+
       @media screen and (max-width: 800px) {
         body {
-          display: inline-block;
-          font-family: "Lato", sans-serif;
-          position: relative;
-          height: 100vh;
-          width: 100vw;
-          top: 0; 
-            /* border: 1px solid red; */
-          background: #bbc7df;
-          left: 0px;
-          }
+       display: inline-block;
+       font-family: "Lato", sans-serif;
+       position: relative;
+       height: 100vh;
+       width: 100vw;
+       top: 0; 
+        background: #bbc7df;
+        left: 0px;
+        }
         .wrapper .sidebar .sidebar-inner{
           left: -100%;
         }
@@ -202,6 +221,22 @@ body {
         .wrapper .sidebar .sidebar-inner .sidebar-heading{
           font-size: 0.85rem;
       }
+      }
+      /* css for the table */
+      .table-heading{
+        background-color:#1F969A;
+        height: 50px;
+        margin-top: 0.4rem;
+      }
+      .table-heading p{
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 50px;
+        text-align: center;
+        vertical-align: middle;
+        letter-spacing: 1px;
+      }
       .tableFixHead {
         overflow-y: auto;
         overflow-x: auto;
@@ -222,85 +257,47 @@ body {
       th,
       td {
         padding: 4px 8px;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
       }
       th {
         background: #eee;
       }
       center {
-    display: block;
-    text-align: -webkit-center;
-}
-#addServiceTable tr:nth-child(even){background-color: #fff;}
-#addServiceTable tr:hover {background-color: #ddd;}
-#addServiceTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: lightskyblue;
-  color: white;
-}
-.btn
-{
-    background-color: lightblue;
-    padding: 6px;
-}
-.btn::hover{
-    background-color: white;
-    padding: 8px;
-}
+        display: block;
+        text-align: -webkit-center;
       }
-.tableFixHead {
-        overflow-y: auto;
-        overflow-x: auto;
-        height: 250px;
-         display: block;
-    -webkit-overflow-scrolling: touch;
-    word-wrap: break-word;
-  white-space: nowrap;
+      #addServiceTable{
+        border: 2px solid #fff;
+        border-radius: 10%;
       }
-      .tableFixHead thead th {
-        position: sticky;
-        top: 0;
+      #addServiceTable tr:nth-child(even){
+        background-color: #fff;
       }
-      table {
-        border-collapse: collapse;
-        width: 80%;
+      #addServiceTable tr:hover {
+        background-color: #ddd;
       }
-      th,
-      td {
-        padding: 8px 16px;
-        border: 1px solid blue;
+      #addServiceTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
       }
-      th {
-        background: #eee;
+      .totalAmount{
+        background-color: #fff;
+        margin-top: 2rem;
+        height: 3rem;
+        vertical-align: middle;
+        line-height: 3rem;
       }
-      center {
-    display: block;
-    text-align: -webkit-center;
-}
-#addServiceTable tr:nth-child(even){background-color: #fff;}
-#addServiceTable tr:hover {background-color: #ddd;}
-#addServiceTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: lightskyblue;
-  color: white;
-}
-.btn
-{
-    background-color: lightblue;
-    padding: 6px;
-}
-.btn::hover{
-    background-color: white;
-    padding: 8px;
-}
+      .totalAmount a{
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: blue;
+      }
 </style>
 </head>
 <body>
-   <div class="wrapper">
+    <div class="wrapper">
       <div class="sidebar">
         <div class="bg-shadow"></div>
           <div class="sidebar-inner">
@@ -308,42 +305,42 @@ body {
               <i class="fas fa-times" aria-hidden="true"></i>
             </div>
             <div class="sidebar-heading">
-              <h1>Payment Tracker</h1>
+              <h2>Payment Tracker</h2>
             </div>
             <ul class="sidebar-menu">
               <li>
                 <a href="/invoice/invoice.html">
-                  <div class="icon"><i class="fas fa-receipt"></i></div>
+                  <div class="icon"><i class="fas fa-receipt fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Invoice</div>
                 </a>
               </li>
               <li>
                 <a href="/clients/clients.html">
-                  <div class="icon"><i class="fas fa-users"></i></div>
+                  <div class="icon"><i class="fas fa-users fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Clients</div>
                 </a>
               </li>
               <li>
-                <a href="/payment received/received_payment.html">
-                  <div class="icon"><i class="fas fa-sign-in-alt"></i></div>
+                <a href="/payment received/received_payment2.html">
+                  <div class="icon"><i class="fas fa-sign-in-alt fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Payment Received</div>
                 </a>
               </li>
               <li>
                 <a href="/recurring-payment/recurring_payment.html">
-                  <div class="icon"><i class="fas fa-history"></i></div>
+                  <div class="icon"><i class="fas fa-history fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Recurring Payment</div>
                 </a>
               </li>
-                <li>
-                <a href="/clients/clients.html">
-                  <div class="icon"><i class="fas fa-users"></i></div>
+                 <li>
+                <a href="/Employee/employee.html">
+                  <div class="icon"><i class="fas fa-user fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Employee</div>
                 </a>
               </li>
               <li>
                 <a href="/timeline/timeline.html" active>
-                  <div class="icon"><i class="fas fa-chart-area"></i></div>
+                  <div class="icon"><i class="fas fa-chart-area fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Timeline</div>
                 </a>
               </li>
@@ -355,13 +352,13 @@ body {
               </li>
               <li>
                 <a href="/Credit-Notes/Credit_notes.html"> 
-                  <div class="icon"><i class="fas fa-file-invoice"></i></div>
+                  <div class="icon"><i class="fas fa-file-invoice fa-xs" aria-hidden="true"></i></div>
                   <div class="title"> Credit Notes </div>
                 </a> 
               </li>
               <li>
                 <a href="/reports/reports.html">
-                  <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+                  <div class="icon"><i class="fas fa-clipboard-list fa-xs" aria-hidden="true"></i></div>
                   <div class="title">Reports</div>
                 </a>
               </li>
@@ -372,119 +369,108 @@ body {
       <div class="main-container">
         <div class="top-navbar">
           <div class="hamburger">
-            <div class="hamburger-inner">
               <i class="fas fa-bars" aria-hidden="true"></i>
-            </div>
           </div>
         </div>
-  <br></br>
-  <center>
-  <div class="column">
-<div class="column center" style="al">
- <a style="font-weight: bolder;"> Overdue:
-  <input type="number" style="border: 2px solid blue;" placeholder=" Overdue value" id="" name="" value=""> </a>
-</div>
-<br> </br>
-<div class="column right" style="">
-<a style="font-weight: bolder;"> Not Deposit:
-  <input type="number" style="border: 2px solid blue;"  placeholder=" Not deposit value" id="" name="" value=""> </a>
-</div>
-</center>
-</div>
-<br> </br>
-<center>
-<div class="row">
- <div class="col" style="font-weight: bolder;">
-    Group by:
-  <select  style="border: 2px solid blue;" name="" id="">
-    <option value="">Name</option>
-    <option value="">Invoice</option>
-    <option value="">- etc. -</option>
-  </select> 
-</div>
-<div  class ="col"> <button style="font-weight: bolder; font-color:blue; border: 2px solid red;"> RUN REPORT 
-</button> 
-</div>
-<div class="col"> 
-  <!-- <select style="border: 2px solid blue;" name="cars" id="cars">
-    <option value="">New Invoice</option>
-    <option value="">-</option>
-    <option value="">-</option>
-    <option value="">-</option>
-  </select> -->
-</div>
-</div>
-</center>
-<br> </br>
-<center>
-<div class="tableFixHead">
-      <table>
-        <thead>
-          <tr>
-            <th>Invoice</th>
-            <th>Clients/Projects</th>
-            <th>Date</th>
-            <th>Due Date</th>
-            <th>Balance</th>
-            <th>Total</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1.1</td>
-            <td>2.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-          </tr>
-          <tr>
-            <td>1.2</td>
-            <td>2.2</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-          </tr>
-          <tr>
-            <td>1.3</td>
-            <td>2.3</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-          </tr>
-          <tr>
-            <td>1.4</td>
-            <td>2.4</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-          </tr>
-          <tr>
-            <td>1.5</td>
-            <td>2.5</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-            <td>1.1</td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="add-employee-btn">
+          <a href="addEmployee.html" class="btn employee-btn">  Add Employee
+          </a>
+        </div>
+        <div class="table-heading">
+          <p> Payment Table </p>
+        </div>
+        <div class="tableFixHead">
+          <table id="addServiceTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th> Mail Id</th>
+                <th>Mobile No.</th>
+                <th>Salary</th>
+                <th>Incentives</th>
+                <th>Other</th>
+                <th>Payment Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> Jagdish Kumar</td>
+                <td> Manager</td>
+                <td>jkumar19@gmail.com</td>
+                <td>99999999999</td>
+                <td>55000</td>
+                <td>15000</td>
+                <td>-/-</td>
+                <td>15/06/2021</td>
+                <td>Pending</td>
+              </tr>
+              <tr>
+                <td> ABC</td>
+                <td> ABC</td>
+                <td>ABC@gmail.com</td>
+                <td>99999999999</td>
+                <td>00000</td>
+                <td>00000</td>
+                <td>-/-</td>
+                <td>18/06/2021</td>
+                <td>Completed</td>
+              </tr>
+              <tr>
+                <td> ABC</td>
+                <td> ABC</td>
+                <td>ABC@gmail.com</td>
+                <td>99999999999</td>
+                <td>00000</td>
+                <td>00000</td>
+                <td>-/-</td>
+                <td>18/06/2021</td>
+                <td>Completed</td>
+              </tr>
+              <tr>
+                <td> ABC</td>
+                <td> ABC</td>
+                <td>ABC@gmail.com</td>
+                <td>99999999999</td>
+                <td>00000</td>
+                <td>00000</td>
+                <td>-/-</td>
+                <td>18/06/2021</td>
+                <td>Completed</td>
+              </tr>
+              <tr>
+                <td> ABC</td>
+                <td> ABC</td>
+                <td>ABC@gmail.com</td>
+                <td>99999999999</td>
+                <td>00000</td>
+                <td>00000</td>
+                <td>-/-</td>
+                <td>18/06/2021</td>
+                <td>Completed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    <div class="row">
+      <div class="col totalAmount" >
+      <a>Total Monthly Payable Amount:</a> Rs.XXXXX  
     </div>
-</center>
+    <script>
+       let humberger = document.querySelector(".hamburger .fas");
+      let closeBtn = document.querySelector(".close");
+      
+
+      humberger.addEventListener("click", function(){
+        let wrapper = document.querySelector(".wrapper");
+        wrapper.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click",function(){
+        let wrapper = document.querySelector(".wrapper");
+       wrapper.classList.remove("active");
+      })
+    </script>
 </body>
 </html>

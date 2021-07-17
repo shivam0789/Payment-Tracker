@@ -113,7 +113,7 @@
         transition: all 0.3s ease;
         /* display: none; */
       }
-      .wrapper .main-container .top-navbar .hamburger {
+      .main-container .top-navbar .hamburger {
         width: 40px;
         height: 40px;
         position: relative;
@@ -122,7 +122,7 @@
         display: none;
         
       }
-      .wrapper .main-container .top-navbar .hamburger .fas {
+      .main-container .top-navbar .hamburger .fas {
         color: #88a3d0;
         font-size: 30px;
         cursor: pointer;
@@ -132,7 +132,7 @@
         clear: left;
         transform: translate(-50%, -50%);
       }
-      .wrapper .main-container .top-navbar .hamburger .fas:hover {
+      .main-container .top-navbar .hamburger .fas:hover {
         opacity: 0.5;
       }
       .wrapper .close {
@@ -172,51 +172,176 @@
       top: 0;
       border: 1px solid black;
       background-color: #f2f2f2;
-      width: 80%;
+      width: calc(100% - 250px);
       height: 100vh;
     }
     .header {
       border-bottom: 1px solid black;
+      height: 4.25rem;
+      width: calc(100% - 250px);
+      display: flex;
+      justify-content: space-between;
     }
     .header .headingOfRP {
-      font-size: 20px;
+      font-size: 1.5rem;
       font-weight: 600;
+      text-transform: capitalize;
+      letter-spacing: 0.08rem;
+      vertical-align: middle;
+      line-height: 4.25rem;
+      padding: 0 0 0 1rem;
     }
-    .recurring-payment-content .header .rightPartHeader {
+    .header .rightPartHeader {
       position: relative;
-      right: -51vw;
-      top: 0;
+      line-height: 4.25rem;
+      vertical-align: middle;
+      align-self: flex-end;
+      display: flex;
+      justify-content: flex-end;
     }
+    .userId{
+       line-height: 4.25rem;
+       vertical-align: middle;
+    }
+     .userId .fas{
+        position: relative;
+        display: inline-block;
+        min-width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+      /* vertical-align: middle;*/ } 
+     
     .topOfBody {
+      margin: 0 0 0 0.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 70px;
     }
-    .paymentTable{
-      overflow: scroll;
+    .btn{
+        border:1px solid #fff;
+        background-color: #fff;
+        text-transform: uppercase;
+        border-radius: 3px;
+        font-weight: 700;
+        padding: 10px 20px;
+        cursor: pointer;
+        letter-spacing: 1px;
+      }
+      .topOfBody .btn:hover{
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      }
+    .topOfBody .recurrPayBtn{
+      color: #04AA6D;
     }
-    .paymentTable {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+    .topOfBody .draftBtn{
+      background-color:#04AA6D; 
+      color: #fff;
+      margin-left: 0.5rem;
+      letter-spacing: 2px;
+    }
+    .search-box{
+          display: inline-block;
+          position: relative;
+          top: 25px;
+          left: 130px;
+          transform: translate(-50%,-50%);
+          background: #fdfdfd;
+          height: 40px;
+          width: 240px;
+          border-radius: 16px;
+          padding: 0px;
+        }
+        .search-box:hover > .search-txt{
+            width: 200px;
+            padding: 0px 0px 0px 10px;
 
-.paymentTable td, .paymentTable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+        }
+        .search-box:hover > .search-btn{
+           background: white;
+        }
+        .search-btn{
+            color: #e84118;
+            float: right;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+            text-decoration: none;
+        }
+        .search-txt{
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: rgb(202, 135, 135);
+            font-size: 16px;
+            transition: 0.4s;
+            line-height: 40px;
+            width: 0;
+        } 
+        .topfilter{
+          position: relative;
+          right: 1rem;
+          top: 7px;
+        }
+        .topfilter select{
+          height: 2.5rem;
+          line-height: 2rem;
+          vertical-align: middle;
+          min-width: 10rem;
+          border-radius: 0.8rem;
+          text-transform: capitalize;
+          font-size: 1rem;
+          font-weight: 600;
+          letter-spacing: 1px;
+          padding: 0rem 0rem 0rem 0.8rem;
+        }
+        .topfilter select option{
+          border-radius: 1rem;
+          text-transform: capitalize;
+          font-size: 1rem;
+          font-weight: 600;
+          letter-spacing: 1px;
+          padding: 0rem 0rem 0rem 0.8rem;
+        }
+        .paymentTable{
+          overflow: scroll;
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        .paymentTable .tableBtn{
+          border: 1px solid #04AA6D;
+          color:  #04AA6D;
+        }
+        .paymentTable .tableBtn:hover{
+          background-color: #04AA6D;
+          color: #ffffff;
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        .paymentTable td, .paymentTable th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
 
-.paymentTable tr:nth-child(even){background-color: #fff;}
+        .paymentTable tr:nth-child(even){background-color: #fff;}
 
-.paymentTable tr:hover {background-color: #ddd;}
+        .paymentTable tr:hover {background-color: #ddd;}
 
-.paymentTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
-}
+        .paymentTable th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+         }
       @media screen and (max-width: 800px) {
         .wrapper .sidebar .sidebar-inner{
           left: -100%;
@@ -326,22 +451,31 @@
         </div>
         <div class="recurring-payment-content">
           <div class="header">
-            <span class="headingOfRP">Recurring Payment</span>
-            <span class="rightPartHeader">
-              <span class="userId"><i class="las la-user-circle"></i>user Id</span>
-              <span>YoursBiz</span>
-              <span>logo</span>
-            </span>
+            <div class="headingOfRP">Recurring Payment</div>
+            <div class="rightPartHeader">
+              <div class="userId"><i class="fas fa-user-circle fa-2x" aria-hidden="true"></i><span style="font-size: 1.25rem; font-weight: 800; letter-spacing: 1px;">user Id</span> </div>
+              <div style="margin-left: 1rem;">
+                <img src="medicento_logo.png" alt="Medicento Logo" width="50" height="50" style="padding-top: 0px;">
+                <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: 1px;">
+                  <span style="color: red;">Yours</span><span style="color: #0E837F;">Biz</span>
+                </span>
+              </div>
+            </div>
           </div>
           <div class="topOfBody">
-            <div>
-              <a href ="add_recurring_payment.html">Add Reccuring Payment</a>
-              <a href ="draft_invoice.html">View Draft Invoice</a>
+            <div style="display: flex; flex-flow: row; justify-content: space-between; flex-wrap: wrap;">
+              <a href ="add_recurring_payment.html" class="btn recurrPayBtn">Add Reccuring Payment</a>
+              <a href ="draft_invoice.html" class="btn draftBtn">View Draft Invoice</a>
             </div>
             <div style="display: flex; flex-flow: row; justify-content: space-between;">
-              <input type="text" placeholder="Search" />
+              <div class="search-box">
+                <input class="search-txt" type="text" name="" placeholder="Type to search">
+                <a href="#" class="search-btn">
+                    <i class="las la-search"></i>
+                </a>
+              </div>
+            </div>
               <div class="topfilter">
-                <i class="las la-search"></i>
                 <select name="filter" id="filter">
                   <option value="filter">filter</option>
                   <option value="filter">by name</option>
@@ -350,7 +484,6 @@
                 </select>
               </div>
             </div>
-          </div>
           <div class="paymentTable">
             <table>
               <tr>
@@ -368,8 +501,8 @@
                 <th>Active</th>
               </tr>
               <tr>
-                <td>Edit</td>
-                <td>Delete</td>
+                <td><button class="btn tableBtn">Edit</button></td>
+                <td><button class="btn tableBtn">Delete</button></td>
                 <td>Abc</td>
                 <td>text adf sdf</td>
                 <td>RTNU0000343</td>
@@ -382,8 +515,8 @@
                 <td><input type="checkbox" name="active" id="active" /></td>
               </tr>
               <tr>
-                <td>Edit</td>
-                <td>Delete</td>
+                <td><button class="btn tableBtn">Edit</button></td>
+                <td><button class="btn tableBtn">Delete</button></td>
                 <td>Abc</td>
                 <td>text adf sdf</td>
                 <td>RTNU0000343</td>
@@ -396,8 +529,8 @@
                 <td><input type="checkbox" name="active" id="active" /></td>
               </tr>
               <tr>
-                <td>Edit</td>
-                <td>Delete</td>
+                <td><button class="btn tableBtn">Edit</button></td>
+                <td><button class="btn tableBtn">Delete</button></td>
                 <td>Abc</td>
                 <td>text adf sdf</td>
                 <td>RTNU0000343</td>
@@ -410,8 +543,8 @@
                 <td><input type="checkbox" name="active" id="active" /></td>
               </tr>
               <tr>
-                <td>Edit</td>
-                <td>Delete</td>
+                <td><button class="btn tableBtn">Edit</button></td>
+                <td><button class="btn tableBtn">Delete</button></td>
                 <td>Abc</td>
                 <td>text adf sdf</td>
                 <td>RTNU0000343</td>
@@ -443,82 +576,6 @@
         let wrapper = document.querySelector(".wrapper");
        wrapper.classList.remove("active");
       })
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
-    <script>
-      // this code for making chart first - chart of the timeline
-      var ctx = document.getElementById("myTimelineChart").getContext("2d");
-      var myTimelineChart = new Chart(ctx,{
-        type : "bar",
-        data:{
-          labels:["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"],
-          datasets:[
-            {
-              data:[15,17,13,14,35,24,25,25,24,32,24,25],
-              label:"Total Income To Be Get",
-              backgroundColor:"yellow",
-              borderColor:"black",
-              borderWidth:1,
-            },
-            {
-              data:[12,12,3,4,25,23,34,09,12,15,18,14],
-              label:"Total Income To Be Paid",
-              backgroundColor:"red",
-              borderColor:"black",
-              borderWidth:1,
-
-            },
-          ]
-        },
-          options:{
-            //  responsive:false,
-        }
-      })
-      
-      // this is the code for the payment received pie chart
-      var ctx = document.getElementById("myPaymentReceivedChart").getContext("2d");
-      var myTimelineChart = new Chart(ctx,{
-        type : "pie",
-        data:{
-          labels:["IK","UK","COP","Others"],
-          datasets:[
-            {
-              data:[12,12,3,25],
-              label:"Total Income To Be Paid",
-              backgroundColor:["#FF7300","#FF0000","#007ED6","#7CDDDD"],
-              borderColor:"black",
-              borderWidth:1,
-
-            },
-          ]
-        },
-          options:{
-            //  responsive:false,
-        }
-      })
-
-      // this code for payment to be paid chart
-      var ctx = document.getElementById("myPaymentPaidChart").getContext("2d");
-      var myTimelineChart = new Chart(ctx,{
-        type : "pie",
-        data:{
-          labels:["K.U. Advert.","IK","Others"],
-          datasets:[
-            {
-              data:[12,12,25],
-              label:"Total Income To Be Paid",
-              backgroundColor:[" #FD6787","#FFF44C"," #288EEB"],
-              borderColor:"black",
-              borderWidth:1,
-
-            },
-          ]
-        },
-          options:{
-            //  responsive:false,
-        }
-      })
-      
     </script>
   </body>
 </html>
